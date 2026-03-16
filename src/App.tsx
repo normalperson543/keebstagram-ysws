@@ -49,7 +49,7 @@ function App() {
           </div>
           <input
             type="email"
-            className="border border-orange-900 bg-orange-100 p-4 text-4xl cursor-pointer hover:scale-102 w-full duration-200"
+            className="border border-orange-900 bg-orange-100 p-4 text-4xl hover:scale-102 w-full duration-200"
             placeholder="enter your email (teens 13-18)"
           />
           <div className="flex gap-4 w-full">
@@ -133,62 +133,79 @@ function App() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
-        <div className="flex flex-col gap-6">
-          <b className="text-4xl">Well, how do I get one?</b>
-          <p className="text-4xl">You start with a 60% virtual keyboard.</p>
-          <p className="text-md">
-            keeb model credits:{" "}
-            <a
-              href="https://www.printables.com/model/1129171-60-percent-keyboard-plate-ansi/files"
-              className="underline"
-            >
-              60 percent keyboard plate (ANSI)
-            </a>{" "}
-            from{" "}
-            <a href="https://www.printables.com/@B20bob" className="underline">
-              B20bob
-            </a>{" "}
-            on Printables,{" "}
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-              CC BY-NC-SA 4.0
-            </a>
-          </p>
-        </div>
-        <div className="bg-gray-700">
-          <img src={blank60PercentKeeb} width={720} />
+      <div className="h-100vh relative flex items-center justify-center">
+        <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center sticky top-0">
+          <div className="flex flex-col gap-6">
+            <b className="text-4xl">Well, how do I get one?</b>
+            <p className="text-4xl">You start with a 60% virtual keyboard.</p>
+            <p className="text-md">
+              keeb model credits:{" "}
+              <a
+                href="https://www.printables.com/model/1129171-60-percent-keyboard-plate-ansi/files"
+                className="underline"
+              >
+                60 percent keyboard plate (ANSI)
+              </a>{" "}
+              from{" "}
+              <a
+                href="https://www.printables.com/@B20bob"
+                className="underline"
+              >
+                B20bob
+              </a>{" "}
+              on Printables,{" "}
+              <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                CC BY-NC-SA 4.0
+              </a>
+            </p>
+          </div>
+          <motion.div
+            className="bg-gray-700 relative"
+            initial={{ top: -24, opacity: 0, rotate: -12 }}
+            whileInView={{ top: 0, opacity: 1, rotate: 0 }}
+            transition={{ type: "spring", delay: 0.1 }}
+          >
+            <img src={blank60PercentKeeb} width={720} />
+          </motion.div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
-        <div className="flex flex-col gap-4">
-          <b className="text-4xl">
-            Customize your virtual keyboard. Add fun colors, desk pads, wrist
-            rests...
-          </b>
-          <p className="text-3xl">
-            Make it your own. You&apos;ll be able to see other people&apos;s
-            keyboards!
-          </p>
-          <p className="text-md">
-            dino image from{" "}
-            <a href="https://rawr.hackclub.com" className="underline">
-              rawr.hackclub.com
-            </a>
-            !
-          </p>
-        </div>
-        <div
-          className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
-          style={{ backgroundImage: `url(${deskpad})` }}
-        >
-          <div className="bg-gray-700">
-            <img src={hcColors60PercentKeeb} width={720} />
-          </div>
-          <div
-            className="rounded p-4 text-2xl shadow-md shadow-gray-500 w-fit text-center bg-cover absolute -bottom-12 -right-8 rotate-2"
-            style={{ backgroundImage: `url(${paper})` }}
-          >
-            @normalperson543's keyboard
+      <div className="h-100vh relative">
+        <div className="flex flex-col items-center justify-center sticky top-0">
+          <div className="flex flex-col gap-8px-24 py-18 text-center ">
+            <div className="flex flex-col gap-4">
+              <b className="text-4xl">
+                Customize your virtual keyboard. Add fun colors, desk pads,
+                wrist rests...
+              </b>
+              <p className="text-3xl">
+                Make it your own. You&apos;ll be able to see other people&apos;s
+                keyboards!
+              </p>
+              <p className="text-md">
+                dino image from{" "}
+                <a href="https://rawr.hackclub.com" className="underline">
+                  rawr.hackclub.com
+                </a>
+                !
+              </p>
+            </div>
+            <div
+              className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
+              style={{ backgroundImage: `url(${deskpad})` }}
+            >
+              <div className="bg-gray-700">
+                <img src={hcColors60PercentKeeb} width={720} />
+              </div>
+              <motion.div
+                className="rounded p-4 text-2xl shadow-md shadow-gray-500 w-fit text-center bg-cover absolute -bottom-12 -right-8 rotate-2"
+                style={{ backgroundImage: `url(${paper})` }}
+                initial={{ scale: 1.1, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ type: "spring", delay: 0.25 }}
+              >
+                @normalperson543's keyboard
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
@@ -217,9 +234,60 @@ function App() {
       <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Every 15 minutes you make something, one key gets added to your
-            keyboard.
+            Pick one custom keycap to add to your virtual keeb, and get it IRL
+            for free!
           </b>
+          <p className="text-3xl">
+            You must ship a project in order to get a custom key. These designs
+            are not final!
+          </p>
+        </div>
+        <div className="flex">
+          <motion.img
+            src={hcKeycap}
+            className="relative"
+            width={240}
+            height={240}
+            initial={{ left: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ left: 24, opacity: 1, rotate: 12 }}
+            transition={{ type: "spring" }}
+          />
+          <motion.img
+            src={hcbKeycap}
+            className="relative"
+            width={240}
+            height={240}
+            initial={{ left: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ left: 24, opacity: 1, rotate: -12 }}
+            transition={{ type: "spring", delay: 0.1 }}
+          />
+          <motion.img
+            src={clubsKeycap}
+            className="relative"
+            width={240}
+            height={240}
+            initial={{ left: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ left: 24, opacity: 1, rotate: 12 }}
+            transition={{ type: "spring", delay: 0.2 }}
+          />
+          <motion.img
+            src={flagKeycap}
+            className="relative"
+            width={240}
+            height={240}
+            initial={{ left: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ left: 24, opacity: 1, rotate: -12 }}
+            transition={{ type: "spring", delay: 0.3 }}
+          />
+          <motion.img
+            src={htKeycap}
+            className="relative"
+            width={240}
+            height={240}
+            initial={{ left: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ left: 24, opacity: 1, rotate: 12 }}
+            transition={{ type: "spring", delay: 0.4 }}
+          />
         </div>
       </div>
     </div>
