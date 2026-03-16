@@ -1,9 +1,16 @@
 import "./App.css";
 import orangePaper from "./assets/orange-paper.jpg";
 import paper from "./assets/paper.jpg";
-import r65 from "./assets/keebs/r65.png"
-import f75 from "./assets/keebs/f75.png"
-import hcKeycap from "./assets/keycaps/hc.png"
+import r65 from "./assets/keebs/r65.png";
+import f75 from "./assets/keebs/f75.png";
+import hcKeycap from "./assets/keycaps/hc.png";
+import clubsKeycap from "./assets/keycaps/clubs.png";
+import flagKeycap from "./assets/keycaps/flag.png";
+import hcbKeycap from "./assets/keycaps/hcb.png";
+import htKeycap from "./assets/keycaps/ht.png";
+import blank60PercentKeeb from "./assets/blank-keebs/60/blank.png";
+import hcColors60PercentKeeb from "./assets/blank-keebs/60/hackclub-colors.png";
+import deskpad from "./assets/desk-pads/rawr.jpg";
 import { motion } from "motion/react";
 function App() {
   return (
@@ -27,10 +34,13 @@ function App() {
             </div>
           </div>
           <div className="text-4xl flex flex-col gap-8">
-            <p>build your own virtual keyboard with your friends by coding!</p>
+            <p>
+              <b>build your own virtual keyboard</b> with your friends by making
+              keeb-related projects!
+            </p>
             <div className="flex flex-col gap-4">
               <p>
-                then, get a <b>mechanical keyboard</b> irl,
+                and, get a real <b>mechanical keyboard</b> irl,
               </p>
               <p>
                 and <b>custom hack club keycaps!</b>
@@ -50,12 +60,166 @@ function App() {
               how it works
             </div>
           </div>
-          <motion.img src={hcKeycap} className="absolute top-12" width={150} height={150} initial={{left: -24, opacity: 0, rotate: 0}} animate={{left: 24, opacity: 1, rotate: 12}} transition={{type: "spring"}}/>
-          <motion.img src={hcKeycap} className="absolute top-60" width={150} height={150} initial={{left: -24, opacity: 0, rotate: 0}} animate={{left: 24, opacity: 1, rotate: -12}} transition={{type: "spring", delay: 0.1}}/>
-          <motion.img src={hcKeycap} className="absolute top-120" width={150} height={150} initial={{left: -24, opacity: 0, rotate: 0}} animate={{left: 24, opacity: 1, rotate: 12}} transition={{type: "spring", delay: 0.2}}/>
-          <motion.img src={hcKeycap} className="absolute top-12" width={150} height={150} initial={{right: -24, opacity: 0, rotate: 0}} animate={{right: 24, opacity: 1, rotate: -12}} transition={{type: "spring", delay: 0.25}}/>
-          <motion.img src={hcKeycap} className="absolute top-60" width={150} height={150} initial={{right: -24, opacity: 0, rotate: 0}} animate={{right: 24, opacity: 1, rotate: 12}} transition={{type: "spring", delay: 0.3}}/>
-          <motion.img src={hcKeycap} className="absolute top-120" width={150} height={150} initial={{right: -24, opacity: 0, rotate: 0}} animate={{right: 24, opacity: 1, rotate: -12}} transition={{type: "spring", delay: 0.32}}/>
+          <motion.img
+            src={hcKeycap}
+            className="absolute top-12"
+            width={150}
+            height={150}
+            initial={{ left: -24, opacity: 0, rotate: 0 }}
+            animate={{ left: 24, opacity: 1, rotate: 12 }}
+            transition={{ type: "spring" }}
+          />
+          <motion.img
+            src={clubsKeycap}
+            className="absolute top-60"
+            width={150}
+            height={150}
+            initial={{ left: -24, opacity: 0, rotate: 0 }}
+            animate={{ left: 60, opacity: 1, rotate: -12 }}
+            transition={{ type: "spring", delay: 0.1 }}
+          />
+          <motion.img
+            src={hcbKeycap}
+            className="absolute top-120"
+            width={150}
+            height={150}
+            initial={{ left: -24, opacity: 0, rotate: 0 }}
+            animate={{ left: 24, opacity: 1, rotate: 12 }}
+            transition={{ type: "spring", delay: 0.2 }}
+          />
+          <motion.img
+            src={hcKeycap}
+            className="absolute top-12"
+            width={150}
+            height={150}
+            initial={{ right: -24, opacity: 0, rotate: 0 }}
+            animate={{ right: 24, opacity: 1, rotate: -12 }}
+            transition={{ type: "spring", delay: 0.25 }}
+          />
+          <motion.img
+            src={flagKeycap}
+            className="absolute top-60"
+            width={150}
+            height={150}
+            initial={{ right: -24, opacity: 0, rotate: 0 }}
+            animate={{ right: 60, opacity: 1, rotate: 12 }}
+            transition={{ type: "spring", delay: 0.3 }}
+          />
+          <motion.img
+            src={htKeycap}
+            className="absolute top-120"
+            width={150}
+            height={150}
+            initial={{ right: -24, opacity: 0, rotate: 0 }}
+            animate={{ right: 24, opacity: 1, rotate: -12 }}
+            transition={{ type: "spring", delay: 0.32 }}
+          />
+        </div>
+      </div>
+      <div className="flex gap-12 p-24">
+        <div className="w-1/2 flex flex-col gap-6 text-3xl">
+          <p>
+            <b>mechanical keyboards are cool!</b> they can sound really creamy,
+            they look good on your desk, and you can customize them!
+          </p>
+          <p>
+            now you can get your own, <b>for free.</b>
+          </p>
+        </div>
+        <div className="w-1/2 flex flex-col items-center justify-center">
+          <p>
+            fun fact: i got my mechanical keyboard (rainy75) for free from hack
+            club!
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
+        <div className="flex flex-col gap-6">
+          <b className="text-4xl">Well, how do I get one?</b>
+          <p className="text-4xl">You start with a 60% virtual keyboard.</p>
+          <p className="text-md">
+            keeb model credits:{" "}
+            <a
+              href="https://www.printables.com/model/1129171-60-percent-keyboard-plate-ansi/files"
+              className="underline"
+            >
+              60 percent keyboard plate (ANSI)
+            </a>{" "}
+            from{" "}
+            <a href="https://www.printables.com/@B20bob" className="underline">
+              B20bob
+            </a>{" "}
+            on Printables,{" "}
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+              CC BY-NC-SA 4.0
+            </a>
+          </p>
+        </div>
+        <div className="bg-gray-700">
+          <img src={blank60PercentKeeb} width={720} />
+        </div>
+      </div>
+      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
+        <div className="flex flex-col gap-4">
+          <b className="text-4xl">
+            Customize your virtual keyboard. Add fun colors, desk pads, wrist
+            rests...
+          </b>
+          <p className="text-3xl">
+            Make it your own. You&apos;ll be able to see other people&apos;s
+            keyboards!
+          </p>
+          <p className="text-md">
+            dino image from{" "}
+            <a href="https://rawr.hackclub.com" className="underline">
+              rawr.hackclub.com
+            </a>
+            !
+          </p>
+        </div>
+        <div
+          className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
+          style={{ backgroundImage: `url(${deskpad})` }}
+        >
+          <div className="bg-gray-700">
+            <img src={hcColors60PercentKeeb} width={720} />
+          </div>
+          <div
+            className="rounded p-4 text-2xl shadow-md shadow-gray-500 w-fit text-center bg-cover absolute -bottom-12 -right-8 rotate-2"
+            style={{ backgroundImage: `url(${paper})` }}
+          >
+            @normalperson543's keyboard
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
+        <div className="flex flex-col gap-4">
+          <b className="text-4xl">
+            Every 15 minutes you make something, one key gets added to your
+            keyboard.
+          </b>
+        </div>
+        <div
+          className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
+          style={{ backgroundImage: `url(${deskpad})` }}
+        >
+          <div className="bg-gray-700 relative">
+            <img src={hcColors60PercentKeeb} width={720} />
+            <img
+              src={hcKeycap}
+              width={75}
+              height={75}
+              className="absolute top-8 left-15"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
+        <div className="flex flex-col gap-4">
+          <b className="text-4xl">
+            Every 15 minutes you make something, one key gets added to your
+            keyboard.
+          </b>
         </div>
       </div>
     </div>
