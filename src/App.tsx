@@ -3,6 +3,7 @@ import orangePaper from "./assets/orange-paper.jpg";
 import paper from "./assets/paper.jpg";
 import r65 from "./assets/keebs/r65.png";
 import f75 from "./assets/keebs/f75.png";
+import s98 from "./assets/keebs/s98.png";
 import hcKeycap from "./assets/keycaps/hc.png";
 import clubsKeycap from "./assets/keycaps/clubs.png";
 import flagKeycap from "./assets/keycaps/flag.png";
@@ -13,7 +14,11 @@ import hcColors60PercentKeeb from "./assets/blank-keebs/60/hackclub-colors.png";
 import deskpad from "./assets/desk-pads/rawr.jpg";
 import logiPad from "./assets/accessories/logi-pad.png";
 import wristrest from "./assets/accessories/wrist-rest.png";
+import da from "./assets/accessories/da.png";
+import hcFlag from "./assets/flag-standalone-wtransparent.svg";
 import { motion } from "motion/react";
+import Collapsible from "./components/collapsible";
+import dinoWant from "./assets/dinos/dino-want-modified.png";
 function App() {
   return (
     <div className="w-full flex flex-col gap-2">
@@ -56,12 +61,13 @@ function App() {
             placeholder="enter your email (teens 13-18)"
           />
           <div className="flex gap-4 w-full">
-            <div className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200">
+            <button className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative text-start">
               preview platform!
-            </div>
-            <div className="border border-orange-900 bg-orange-100 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200">
+              <img src={dinoWant} className="absolute right-4 bottom-0" width={84}/>
+            </button>
+            <button className="border border-orange-900 bg-orange-100 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200">
               how it works
-            </div>
+            </button>
           </div>
           <motion.img
             src={hcKeycap}
@@ -69,8 +75,8 @@ function App() {
             width={150}
             height={150}
             initial={{ left: -24, opacity: 0, rotate: 0 }}
+            whileTap={{ scale: 0.8 }}
             whileInView={{ left: 24, opacity: 1, rotate: 12 }}
-            transition={{ type: "spring" }}
           />
           <motion.img
             src={clubsKeycap}
@@ -79,7 +85,8 @@ function App() {
             height={150}
             initial={{ left: -24, opacity: 0, rotate: 0 }}
             whileInView={{ left: 60, opacity: 1, rotate: -12 }}
-            transition={{ type: "spring", delay: 0.1 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ delay: 0.1 }}
           />
           <motion.img
             src={hcbKeycap}
@@ -88,7 +95,8 @@ function App() {
             height={150}
             initial={{ left: -24, opacity: 0, rotate: 0 }}
             whileInView={{ left: 24, opacity: 1, rotate: 12 }}
-            transition={{ type: "spring", delay: 0.2 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ delay: 0.2 }}
           />
           <motion.img
             src={hcKeycap}
@@ -97,7 +105,8 @@ function App() {
             height={150}
             initial={{ right: -24, opacity: 0, rotate: 0 }}
             whileInView={{ right: 24, opacity: 1, rotate: -12 }}
-            transition={{ type: "spring", delay: 0.25 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ delay: 0.25 }}
           />
           <motion.img
             src={flagKeycap}
@@ -106,7 +115,8 @@ function App() {
             height={150}
             initial={{ right: -24, opacity: 0, rotate: 0 }}
             whileInView={{ right: 60, opacity: 1, rotate: 12 }}
-            transition={{ type: "spring", delay: 0.3 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ delay: 0.3 }}
           />
           <motion.img
             src={htKeycap}
@@ -115,7 +125,8 @@ function App() {
             height={150}
             initial={{ right: -24, opacity: 0, rotate: 0 }}
             whileInView={{ right: 24, opacity: 1, rotate: -12 }}
-            transition={{ type: "spring", delay: 0.32 }}
+            whileTap={{ scale: 0.8 }}
+            transition={{ delay: 0.32 }}
           />
         </div>
       </div>
@@ -245,47 +256,42 @@ function App() {
         <div className="flex">
           <motion.img
             src={hcKeycap}
-            className="relative"
             width={240}
             height={240}
-            initial={{ left: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ left: 24, opacity: 1, rotate: 12 }}
+            initial={{ x: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ x: 0, opacity: 1, rotate: 12 }}
             transition={{ type: "spring" }}
           />
           <motion.img
             src={hcbKeycap}
-            className="relative"
             width={240}
             height={240}
-            initial={{ left: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ left: 24, opacity: 1, rotate: -12 }}
+            initial={{ x: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ x: 0, opacity: 1, rotate: -12 }}
             transition={{ type: "spring", delay: 0.1 }}
           />
           <motion.img
             src={clubsKeycap}
-            className="relative"
             width={240}
             height={240}
-            initial={{ left: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ left: 24, opacity: 1, rotate: 12 }}
+            initial={{ x: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ x: 0, opacity: 1, rotate: 12 }}
             transition={{ type: "spring", delay: 0.2 }}
           />
           <motion.img
             src={flagKeycap}
-            className="relative"
             width={240}
             height={240}
-            initial={{ left: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ left: 24, opacity: 1, rotate: -12 }}
+            initial={{ x: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ x: 0, opacity: 1, rotate: -12 }}
             transition={{ type: "spring", delay: 0.3 }}
           />
           <motion.img
             src={htKeycap}
-            className="relative"
             width={240}
             height={240}
-            initial={{ left: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ left: 24, opacity: 1, rotate: 12 }}
+            initial={{ x: -120, opacity: 0, rotate: 0 }}
+            whileInView={{ x: 0, opacity: 1, rotate: 12 }}
             transition={{ type: "spring", delay: 0.4 }}
           />
         </div>
@@ -296,7 +302,7 @@ function App() {
             Collect all 61 keys, and get this 60% keyboard IRL, AND a wrist
             rest, AND 3 total custom keys.
           </b>
-          <p className="text-3xl">
+          <p className="text-2xl">
             ROYAL KLUDGE R65 or similar 60-65% keyboard. That means 16 hours of
             coding!
           </p>
@@ -323,7 +329,7 @@ function App() {
             Or, get 84 keys, and get this 75% keyboard, AND a desk pad, and 5
             total custom keys.
           </b>
-          <p className="text-3xl">
+          <p className="text-2xl">
             EPOMAKER X Aula F75 MAX or similar 75%-TKL keyboard, and a Logitech
             desk pad. That means 21 hours of coding!
           </p>
@@ -351,15 +357,15 @@ function App() {
       <div className="flex flex-col gap-12 px-24 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Or, get 84 keys, and get this 75% keyboard, AND a desk pad, and 5
-            total custom keys.
+            Or, get 104 keys, and get up to a full-size keyboard, AND a gaming
+            mouse, AND 7 total custom keys.
           </b>
-          <p className="text-3xl">
-            EPOMAKER X Aula F75 MAX or similar 75%-TKL keyboard, and a Logitech
-            desk pad. That means 21 hours of coding!
+          <p className="text-2xl">
+            ROYAL KLUDGE S98, or similar 96%-100% keyboard, and Razer DeathAdder
+            Essential or similar mouse. That means 26 hours of coding!
           </p>
         </div>
-        <div className="relative">
+        <div className="relative flex flex-row gap-4 items-center">
           <motion.div
             className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 flex flex-col items-center justify-center -rotate-20"
             initial={{ opacity: 0, scale: 2 }}
@@ -367,18 +373,159 @@ function App() {
             transition={{ type: "spring", duration: 0.7, delay: 0.25 }}
           >
             <div className="rounded-full border-4 border-orange-900 bg-orange-50 p-4 text-5xl font-extrabold">
-              84
+              104
             </div>
             <p className="text-3xl">keys</p>
           </motion.div>
-          <img
-            src={f75}
-            width={480}
-            className="absolute top-1/2 left-1/2 -translate-1/2 z-2"
-          />
-          <img src={logiPad} width={720} />
+          <img src={s98} width={600} />
+          <img src={da} width={120} />
         </div>
-        
+        <p className="text-xl">
+          Want something else? We'll have a selection of keyboards at each level
+          to select from.
+        </p>
+      </div>
+      <div className="flex flex-col gap-8 px-24 py-24">
+        <div className="flex flex-row gap-12 relative">
+          <motion.div
+            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-1/2 bg-cover"
+            style={{ backgroundImage: `url(${paper})` }}
+            initial={{ x: -24, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <b>First, sign up!</b>
+            <p>Any teen 13-18 can start building keyboard-related projects.</p>
+          </motion.div>
+        </div>
+        <div className="flex flex-row gap-12 relative">
+          <motion.div
+            className="rounded p-4 shadow-md shadow-gray-500 w-1/2 bg-cover flex flex-col gap-2"
+            style={{ backgroundImage: `url(${paper})` }}
+            initial={{ x: 24, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.25 }}
+          >
+            <b className="text-4xl">
+              Next, customize your own virtual keyboard.
+            </b>
+            <p className="text-4xl">
+              The keys you put on your virtual keyboard are the keys that you’ll
+              get in real life.
+            </p>
+            <p className="text-2xl">
+              You’ll also be able to see other people’s keyboards.
+            </p>
+          </motion.div>
+        </div>
+        <div className="flex flex-row gap-12 relative">
+          <motion.div
+            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-1/2 bg-cover"
+            style={{ backgroundImage: `url(${paper})` }}
+            initial={{ x: -24, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <b>Start building!</b>
+            <p>
+              Any project relating to keyboards are fair game! You’ll log your
+              building using{" "}
+              <a
+                href="https://hackatime.hackclub.com"
+                className="font-bold underline"
+              >
+                Hackatime
+              </a>
+              .
+            </p>
+          </motion.div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-4 px-24 py-18">
+        <div>
+          <h2 className="text-4xl font-bold">FAQ!</h2>
+          <p className="text-xl">We know you have questions!</p>
+        </div>
+        <Collapsible title="How do I join?">
+          <p>
+            You can RSVP early for the event to express your interest!
+            We&apos;ll share additional info when the event goes live.
+          </p>
+        </Collapsible>
+        <Collapsible title="Am I eligible?">
+          <p>
+            Any teen 13-18 who has not been previously banned can participate.
+          </p>
+        </Collapsible>
+        <Collapsible title="All of this? FOR FREE?!?">
+          <p>
+            Yep! This event is run by Hack Club, a 501(c)(3) non-profit
+            organization d.b.a. Hack Club (EIN: 81-2908499). We provide these
+            things for free to teenagers because of our generous sponsors.
+          </p>
+        </Collapsible>
+        <Collapsible title="What can I build?">
+          <p>
+            You can RSVP early for the event to express your interest!
+            We&apos;ll share additional info when the event goes live.
+          </p>
+        </Collapsible>
+        <Collapsible title="Will there be different keyboards and accessories in the shop?">
+          <p>
+            Yep! There will be more keyboards at each tier listed on our shop.
+          </p>
+        </Collapsible>
+        <Collapsible title="Can I pick the custom keycaps I get shipped for free?">
+          <p>
+            Yep! You can do this by going to your virtual keyboard, selecting
+            the key you want, and choosing the keycap design. We'll refer to
+            your virtual keyboard to ship the right keycaps. Subject to
+            availability.
+          </p>
+        </Collapsible>
+        <Collapsible title="How can I track time?">
+          <p>
+            You'll use Hackatime to track code and CAD activity and Lapse to
+            record yourself building.
+          </p>
+        </Collapsible>
+        <Collapsible title="Do I have to be committed to this event when I RSVP?">
+          <p>Nope! This is just to gauge interest within the community.</p>
+        </Collapsible>
+      </div>
+      <div className="p-16 bg-black flex flex-row gap-4 text-white items-start">
+        <img src={hcFlag} width={128} />
+        <div className="flex flex-col gap-8">
+          <div>
+            <p className="text-2xl font-bold">A Hack Club initative</p>
+            <p>
+              The Hack Foundation is a 501(c)(3) non-profit organization d.b.a.
+              Hack Club (EIN: 81-2908499)
+            </p>
+            <a href="https://hackclub.com" className="underline">
+              About Hack Club
+            </a>
+          </div>
+          <div>
+            <p>
+              This event is not affiliated or endorsed by any of the keyboard
+              companies mentioned above.
+            </p>
+          </div>
+          <div>
+            <p>
+              Made with love by @normalperson543.{" "}
+              <a
+                href="https://github.com/normalperson543/keystagram-ysws"
+                className="underline"
+                target="_blank"
+              >
+                Open source.
+              </a>
+            </p>
+            <p>Need to get in touch? Check out the #keystagram-ysws channel!</p>
+          </div>
+        </div>
       </div>
     </div>
   );
