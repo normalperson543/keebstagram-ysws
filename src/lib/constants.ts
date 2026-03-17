@@ -1,8 +1,17 @@
 export const KeycapTypes = [
   "/assets/keycaps/blank.png",
   "/assets/keycaps/hc.png",
-  "/assets/keycaps/hcb.png",
-  "/assets/keycaps/clubs.png",
+  "/assets/keycaps/hcb-light.png",
+  "/assets/keycaps/hcb-dark.png",
   "/assets/keycaps/ht.png",
-  "/assets/keycaps/flag.png",
+  "/assets/keycaps/orph-flag.png",
+  "/assets/keycaps/flag-standalone.png",
 ];
+export const Blank60KeyboardTypes = [
+  "/assets/blank-keebs/60/blank.png",
+  "/assets/blank-keebs/60/hackclub-colors.png"
+]
+export const DeskpadTypes = [
+  "",
+  "/assets/desk-pads/rawr.jpg"
+]

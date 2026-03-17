@@ -4,9 +4,6 @@ import paper from "./assets/paper.jpg";
 import r65 from "./assets/keebs/r65.png";
 import f75 from "./assets/keebs/f75.png";
 import s98 from "./assets/keebs/s98.png";
-import blank60PercentKeeb from "./assets/blank-keebs/60/blank.png";
-import hcColors60PercentKeeb from "./assets/blank-keebs/60/hackclub-colors.png";
-import deskpad from "./assets/desk-pads/rawr.jpg";
 import logiPad from "./assets/accessories/logi-pad.png";
 import wristrest from "./assets/accessories/wrist-rest.png";
 import da from "./assets/accessories/da.png";
@@ -32,9 +29,13 @@ function App() {
         <div className="flex flex-col gap-6 items-center justify-center md:w-3/5 w-full">
           <p className="text-3xl">welcome to</p>
           <div
-            className="rounded p-8 text-5xl  shadow-md shadow-gray-500 w-full text-center bg-cover relative"
+            className="rounded p-8 text-5xl  shadow-md shadow-gray-500 w-full text-center bg-cover relative flex items-center justify-center"
             style={{ backgroundImage: `url(${paper})` }}
           >
+            <img
+              src="/assets/keycaps/hc.png"
+              className="-left-4 relative w-12 h-12 -rotate-12"
+            />
             <b>keeb</b>
             <span className="font-thin">stagram!</span>
             <div className="p-4 -right-8 -bottom-8 rotate-5 border-dashed w-fit absolute hover:rotate-10 hover:scale-120 duration-200">
@@ -89,59 +90,59 @@ function App() {
           </div>
           <div className="hidden md:block">
             <motion.img
-              src="/assets/keycaps/"
-              className="absolute top-12"
-              width={150}
-              height={150}
+              src="/assets/keycaps/hc.png"
+              className="absolute top-24"
+              width={96}
+              height={96}
               initial={{ left: -0, opacity: 0, rotate: 0 }}
               whileTap={{ scale: 0.8 }}
               whileInView={{ left: 24, opacity: 1, rotate: 12 }}
             />
             <motion.img
-              src={clubsKeycap}
-              className="absolute top-60"
-              width={150}
-              height={150}
+              src="/assets/keycaps/flag-standalone.png"
+              className="absolute top-72"
+              width={96}
+              height={96}
               initial={{ left: -0, opacity: 0, rotate: 0 }}
               whileInView={{ left: 60, opacity: 1, rotate: -12 }}
               whileTap={{ scale: 0.8 }}
               transition={{ delay: 0.1 }}
             />
             <motion.img
-              src={hcbKeycap}
+              src="/assets/keycaps/hcb-light.png"
               className="absolute top-120"
-              width={150}
-              height={150}
+              width={96}
+              height={96}
               initial={{ left: -0, opacity: 0, rotate: 0 }}
               whileInView={{ left: 24, opacity: 1, rotate: 12 }}
               whileTap={{ scale: 0.8 }}
               transition={{ delay: 0.2 }}
             />
             <motion.img
-              src={hcKeycap}
-              className="absolute top-12"
-              width={150}
-              height={150}
+              src="/assets/keycaps/hcb-dark.png"
+              className="absolute top-24"
+              width={96}
+              height={96}
               initial={{ right: 12, opacity: 0, rotate: 0 }}
               whileInView={{ right: 24, opacity: 1, rotate: -12 }}
               whileTap={{ scale: 0.8 }}
               transition={{ delay: 0.25 }}
             />
             <motion.img
-              src={flagKeycap}
-              className="absolute top-60"
-              width={150}
-              height={150}
+              src="/assets/keycaps/orph-flag.png"
+              className="absolute top-72"
+              width={96}
+              height={96}
               initial={{ right: 12, opacity: 0, rotate: 0 }}
               whileInView={{ right: 60, opacity: 1, rotate: 12 }}
               whileTap={{ scale: 0.8 }}
               transition={{ delay: 0.3 }}
             />
             <motion.img
-              src={htKeycap}
+              src="/assets/keycaps/ht.png"
               className="absolute top-120"
-              width={150}
-              height={150}
+              width={96}
+              height={96}
               initial={{ right: 12, opacity: 0, rotate: 0 }}
               whileInView={{ right: 24, opacity: 1, rotate: -12 }}
               whileTap={{ scale: 0.8 }}
@@ -198,7 +199,7 @@ function App() {
           whileInView={{ top: 0, opacity: 1, rotate: 0 }}
           transition={{ type: "spring", delay: 0.1 }}
         >
-          <img src={blank60PercentKeeb} width={720} />
+          <img src="/assets/blank-keebs/60/blank.png" width={720} />
         </motion.div>
       </div>
       <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
@@ -221,10 +222,10 @@ function App() {
         </div>
         <div
           className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
-          style={{ backgroundImage: `url(${deskpad})` }}
+          style={{ backgroundImage: `url(${"/assets/desk-pads/rawr.jpg"})` }}
         >
           <div className="bg-gray-700">
-            <img src={hcColors60PercentKeeb} width={720} />
+            <img src="/assets/blank-keebs/60/hackclub-colors.png" width={720} />
           </div>
           <motion.div
             className="rounded p-4 text-2xl shadow-md shadow-gray-500 w-fit text-center bg-cover absolute -bottom-12 -right-8 rotate-2"
@@ -246,15 +247,15 @@ function App() {
         </div>
         <div
           className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
-          style={{ backgroundImage: `url(${deskpad})` }}
+          style={{ backgroundImage: `url("/assets/desk-pads/rawr.jpg")` }}
         >
           <div className="bg-gray-700 relative w-full aspect-1925/638">
             <img
-              src={hcColors60PercentKeeb}
+              src={"/assets/blank-keebs/60/hackclub-colors.png"}
               className="w-full max-w-180 object-contain h-full"
             />
             <motion.img
-              src={hcKeycap}
+              src="/assets/keycaps/hc.png"
               className="absolute top-[12%] left-[8%] w-[11%]"
               initial={{ opacity: 0, scale: 2.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -273,7 +274,7 @@ function App() {
           </p>
         </div>
         <div className="flex">
-          <motion.img
+          {/*<motion.img
             src={hcKeycap}
             width={240}
             height={240}
@@ -312,7 +313,7 @@ function App() {
             initial={{ x: -120, opacity: 0, rotate: 0 }}
             whileInView={{ x: 0, opacity: 1, rotate: 12 }}
             transition={{ type: "spring", delay: 0.4 }}
-          />
+          />*/}
         </div>
       </div>
       <div className="flex flex-col gap-12 px-24 py-18 text-center items-center justify-center">

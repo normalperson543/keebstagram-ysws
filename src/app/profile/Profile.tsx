@@ -1,13 +1,17 @@
 import orangePaper from "../../assets/orange-paper.jpg";
 import paper from "../../assets/paper.jpg";
-import deskpad from "../../assets/desk-pads/rawr.jpg";
-import hcColors60PercentKeeb from "../../assets/blank-keebs/60/hackclub-colors.png";
 import { motion } from "motion/react";
 import { useState } from "react";
-import { KeycapTypes } from "../../lib/constants";
+import {
+  Blank60KeyboardTypes,
+  DeskpadTypes,
+  KeycapTypes,
+} from "../../lib/constants";
 
 function ProfileUI() {
   const claimedCustomKeycaps = 1;
+  const [blankKeebType, setBlankKeebType] = useState(0);
+  const [deskpadType, setDeskpadType] = useState(1);
   const [keycaps, setKeycaps] = useState([
     {
       id: 0,
@@ -26,8 +30,39 @@ function ProfileUI() {
       type: 0,
     },
   ]);
-  function handleChangeKeycap(id: number) {
+  function handleChangeDeskpad(
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) {
+    e.stopPropagation();
+    if (deskpadType === DeskpadTypes.length - 1) {
+      setDeskpadType(0);
+    } else {
+      setDeskpadType(deskpadType + 1);
+    }
+  }
+  function handleChangeKeyboard(
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>,
+  ) {
+    e.stopPropagation();
+    if (blankKeebType === Blank60KeyboardTypes.length - 1) {
+      setBlankKeebType(0);
+    } else {
+      setBlankKeebType(blankKeebType + 1);
+    }
+  }
+  function handleChangeKeycap(
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>,
+    id: number,
+  ) {
+    e.stopPropagation();
     if (keycaps[id].type === 0) {
+      const customKeycaps = keycaps.filter((k) => k.type > 0);
+      if (customKeycaps.length >= claimedCustomKeycaps) {
+        alert(
+          `You only have ${claimedCustomKeycaps} custom keycap${claimedCustomKeycaps !== 1 ? "s" : ""}. You need to make a custom keycap on your keyboard blank first before making this key a custom keycap.`,
+        );
+        return;
+      }
     }
     setKeycaps(
       keycaps.map((k) => {
@@ -51,9 +86,10 @@ function ProfileUI() {
       >
         <div className="flex gap-6 flex-1 items-center">
           <div
-            className="rounded p-4 text-3xl shadow-md shadow-gray-500 w-fit text-center bg-cover"
+            className="rounded p-4 text-3xl shadow-md shadow-gray-500 w-fit text-center bg-cover relative flex items-center"
             style={{ backgroundImage: `url(${paper})` }}
           >
+            <img src="/assets/keycaps/hc.png" className="-left-4 relative w-12 h-12 -rotate-12" />
             <b>keeb</b>
             <span className="font-thin">stagram!</span>
           </div>
@@ -97,20 +133,25 @@ function ProfileUI() {
           </div>
         </div>
         <div
-          className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
-          style={{ backgroundImage: `url(${deskpad})` }}
+          className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative bg-center aspect-1920/768 w-2/3 box-border"
+          style={{ backgroundImage: `url(${DeskpadTypes[deskpadType]})`, border: deskpadType === 0 ? "8px dashed #aaa" : "" }}
+          onClick={(e) => handleChangeDeskpad(e)}
         >
           <div className="bg-gray-700 relative w-full aspect-1925/638">
-            <img src={hcColors60PercentKeeb} width={720} />
+            <img
+              src={Blank60KeyboardTypes[blankKeebType]}
+              onClick={(e) => handleChangeKeyboard(e)}
+              className="aspect-1925/638"
+            />
             {keycaps.map((k) => (
               <motion.img
                 src={KeycapTypes[k.type]}
-                className={`absolute w-[11%]`}
+                className={`absolute w-[7%]`}
                 initial={{ opacity: 0, scale: 2.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1 }}
-                onClick={() => handleChangeKeycap(k.id)}
-                style={{ top: "11%", left: `${8 + k.id * 6.6}%` }}
+                transition={{ delay: 0.05 * k.id }}
+                onClick={(e) => handleChangeKeycap(e, k.id)}
+                style={{ top: "18%", left: `${10 + k.id * 6.6}%` }}
               />
             ))}
           </div>
