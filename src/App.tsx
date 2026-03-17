@@ -19,14 +19,22 @@ import hcFlag from "./assets/flag-standalone-wtransparent.svg";
 import { motion } from "motion/react";
 import Collapsible from "./components/collapsible";
 import dinoWant from "./assets/dinos/dino-want-modified.png";
+import { CircleQuestionMarkIcon } from "lucide-react";
 function App() {
   return (
     <div className="w-full flex flex-col gap-2">
       <div
-        className="w-full p-12 flex items-center justify-center bg-cover"
+        className="w-full p-6 md:p-12 flex items-center justify-center bg-cover"
         style={{ backgroundImage: `url(${orangePaper})` }}
       >
-        <div className="flex flex-col gap-6 items-center justify-center w-3/5">
+        <a href="https://hackclub.com/">
+          <img
+            className="absolute top-0 left-2 border-0 w-36 z-10 hover:rotate-3 hover:scale-105 transition duration-200"
+            src="https://assets.hackclub.com/flag-orpheus-top.svg"
+            alt="Hack Club"
+          />
+        </a>
+        <div className="flex flex-col gap-6 items-center justify-center md:w-3/5 w-full">
           <p className="text-3xl">welcome to</p>
           <div
             className="rounded p-8 text-5xl  shadow-md shadow-gray-500 w-full text-center bg-cover relative"
@@ -60,78 +68,85 @@ function App() {
             className="border border-orange-900 bg-orange-100 p-4 text-4xl hover:scale-102 w-full duration-200"
             placeholder="enter your email (teens 13-18)"
           />
-          <div className="flex gap-4 w-full">
+          <div className="flex flex-col gap-4 w-full md:flex-row">
             <button className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative text-start">
-              preview platform!
-              <img src={dinoWant} className="absolute right-4 bottom-0" width={84}/>
+              rsvp!
+              <img
+                src={dinoWant}
+                className="absolute right-4 bottom-0"
+                width={84}
+              />
             </button>
-            <button className="border border-orange-900 bg-orange-100 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200">
+            <button className="border border-orange-900 bg-orange-100 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative flex items-center justify-between">
               how it works
+              <CircleQuestionMarkIcon width={48} height={48} />
             </button>
           </div>
-          <motion.img
-            src={hcKeycap}
-            className="absolute top-12"
-            width={150}
-            height={150}
-            initial={{ left: -24, opacity: 0, rotate: 0 }}
-            whileTap={{ scale: 0.8 }}
-            whileInView={{ left: 24, opacity: 1, rotate: 12 }}
-          />
-          <motion.img
-            src={clubsKeycap}
-            className="absolute top-60"
-            width={150}
-            height={150}
-            initial={{ left: -24, opacity: 0, rotate: 0 }}
-            whileInView={{ left: 60, opacity: 1, rotate: -12 }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ delay: 0.1 }}
-          />
-          <motion.img
-            src={hcbKeycap}
-            className="absolute top-120"
-            width={150}
-            height={150}
-            initial={{ left: -24, opacity: 0, rotate: 0 }}
-            whileInView={{ left: 24, opacity: 1, rotate: 12 }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ delay: 0.2 }}
-          />
-          <motion.img
-            src={hcKeycap}
-            className="absolute top-12"
-            width={150}
-            height={150}
-            initial={{ right: -24, opacity: 0, rotate: 0 }}
-            whileInView={{ right: 24, opacity: 1, rotate: -12 }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ delay: 0.25 }}
-          />
-          <motion.img
-            src={flagKeycap}
-            className="absolute top-60"
-            width={150}
-            height={150}
-            initial={{ right: -24, opacity: 0, rotate: 0 }}
-            whileInView={{ right: 60, opacity: 1, rotate: 12 }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ delay: 0.3 }}
-          />
-          <motion.img
-            src={htKeycap}
-            className="absolute top-120"
-            width={150}
-            height={150}
-            initial={{ right: -24, opacity: 0, rotate: 0 }}
-            whileInView={{ right: 24, opacity: 1, rotate: -12 }}
-            whileTap={{ scale: 0.8 }}
-            transition={{ delay: 0.32 }}
-          />
+          <div className="hidden md:block">
+            <motion.img
+              src={hcKeycap}
+              className="absolute top-12"
+              width={150}
+              height={150}
+              initial={{ left: -0, opacity: 0, rotate: 0 }}
+              whileTap={{ scale: 0.8 }}
+              whileInView={{ left: 24, opacity: 1, rotate: 12 }}
+            />
+            <motion.img
+              src={clubsKeycap}
+              className="absolute top-60"
+              width={150}
+              height={150}
+              initial={{ left: -0, opacity: 0, rotate: 0 }}
+              whileInView={{ left: 60, opacity: 1, rotate: -12 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ delay: 0.1 }}
+            />
+            <motion.img
+              src={hcbKeycap}
+              className="absolute top-120"
+              width={150}
+              height={150}
+              initial={{ left: -0, opacity: 0, rotate: 0 }}
+              whileInView={{ left: 24, opacity: 1, rotate: 12 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ delay: 0.2 }}
+            />
+            <motion.img
+              src={hcKeycap}
+              className="absolute top-12"
+              width={150}
+              height={150}
+              initial={{ right: 12, opacity: 0, rotate: 0 }}
+              whileInView={{ right: 24, opacity: 1, rotate: -12 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ delay: 0.25 }}
+            />
+            <motion.img
+              src={flagKeycap}
+              className="absolute top-60"
+              width={150}
+              height={150}
+              initial={{ right: 12, opacity: 0, rotate: 0 }}
+              whileInView={{ right: 60, opacity: 1, rotate: 12 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ delay: 0.3 }}
+            />
+            <motion.img
+              src={htKeycap}
+              className="absolute top-120"
+              width={150}
+              height={150}
+              initial={{ right: 12, opacity: 0, rotate: 0 }}
+              whileInView={{ right: 24, opacity: 1, rotate: -12 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ delay: 0.32 }}
+            />
+          </div>
         </div>
       </div>
-      <div className="flex gap-12 p-24">
-        <div className="w-1/2 flex flex-col gap-6 text-3xl">
+      <div className="flex flex-col lg:flex-row gap-12 p-24">
+        <div className="w-full lg:w-1/2 flex flex-col gap-6 text-3xl">
           <p>
             <b>mechanical keyboards are cool!</b> they can sound really creamy,
             they look good on your desk, and you can customize them!
@@ -143,7 +158,7 @@ function App() {
             and, you'll meet a lot of cool hackclubbers when you're at it too.
           </p>
         </div>
-        <div className="w-1/2 flex flex-col items-center justify-center">
+        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
           <p>
             fun fact: i got my mechanical keyboard (rainy75) for free from hack
             club!
@@ -245,12 +260,11 @@ function App() {
       <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Pick one custom keycap to add to your virtual keeb, and get it IRL
-            for free!
+            Pick a custom keycap, and get it IRL for free!
           </b>
           <p className="text-3xl">
-            You must ship a project in order to get a custom key. These designs
-            are not final!
+            You must ship a project in order to get your first custom key. These
+            designs are not final!
           </p>
         </div>
         <div className="flex">
@@ -309,7 +323,7 @@ function App() {
         </div>
         <div className="relative">
           <motion.div
-            className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 flex flex-col items-center justify-center -rotate-20"
+            className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 md:flex flex-col items-center justify-center -rotate-20 hidden"
             initial={{ opacity: 0, scale: 2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", duration: 0.7, delay: 0.25 }}
@@ -336,7 +350,7 @@ function App() {
         </div>
         <div className="relative">
           <motion.div
-            className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 flex flex-col items-center justify-center -rotate-20"
+            className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 md:flex flex-col items-center justify-center -rotate-20 hidden"
             initial={{ opacity: 0, scale: 2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", duration: 0.7, delay: 0.25 }}
@@ -348,8 +362,7 @@ function App() {
           </motion.div>
           <img
             src={f75}
-            width={480}
-            className="absolute top-1/2 left-1/2 -translate-1/2 z-2"
+            className="absolute top-1/2 left-1/2 -translate-1/2 z-2 w-3/4"
           />
           <img src={logiPad} width={720} />
         </div>
@@ -367,7 +380,7 @@ function App() {
         </div>
         <div className="relative flex flex-row gap-4 items-center">
           <motion.div
-            className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 flex flex-col items-center justify-center -rotate-20"
+            className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 md:flex flex-col items-center justify-center -rotate-20 hidden"
             initial={{ opacity: 0, scale: 2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", duration: 0.7, delay: 0.25 }}
@@ -378,7 +391,7 @@ function App() {
             <p className="text-3xl">keys</p>
           </motion.div>
           <img src={s98} width={600} />
-          <img src={da} width={120} />
+          <img src={da} width="max-w-36" />
         </div>
         <p className="text-xl">
           Want something else? We'll have a selection of keyboards at each level
@@ -428,8 +441,8 @@ function App() {
           >
             <b>Start building!</b>
             <p>
-              Any project relating to keyboards are fair game! You’ll log your
-              building using{" "}
+              Build any keyboard related project you want! You'll log your hours
+              using{" "}
               <a
                 href="https://hackatime.hackclub.com"
                 className="font-bold underline"
