@@ -49,17 +49,17 @@ function App() {
               <img src={f75} width={120} height={120} />
             </div>
           </div>
-          <div className="text-4xl flex flex-col gap-8">
-            <p>
+          <div className="flex flex-col gap-8">
+            <p className="text-4xl">
               <b>build your own virtual keyboard</b> by making any keeb-related
               projects!
             </p>
+            <p className="text-4xl">
+              get <b>custom hack club keycaps,</b>
+            </p>
             <div className="flex flex-col gap-4">
-              <p>
-                and, get a real <b>mechanical keyboard</b> irl,
-              </p>
-              <p>
-                and <b>custom hack club keycaps!</b>
+              <p className="text-4xl">
+                and, a real <b>mechanical keyboard</b> irl and accessories!
               </p>
             </div>
           </div>
@@ -81,6 +81,16 @@ function App() {
               how it works
               <CircleQuestionMarkIcon width={48} height={48} />
             </button>
+          </div>
+          <div>
+            <b>click and hover on things for easter eggs! :3</b>
+            <p className="text-md">
+              dino image from{" "}
+              <a href="https://rawr.hackclub.com" className="underline">
+                rawr.hackclub.com
+              </a>
+              !
+            </p>
           </div>
           <div className="hidden md:block">
             <motion.img
@@ -199,8 +209,8 @@ function App() {
       <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Customize your virtual keyboard. Add fun colors, desk pads, wrist
-            rests...
+            Customize your virtual keyboard. Add fun colors, custom keycaps,
+            desk pads, wrist rests...
           </b>
           <p className="text-3xl">
             And share it with the community. You&apos;ll be able to see other
@@ -243,13 +253,14 @@ function App() {
           className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
           style={{ backgroundImage: `url(${deskpad})` }}
         >
-          <div className="bg-gray-700 relative">
-            <img src={hcColors60PercentKeeb} width={720} />
+          <div className="bg-gray-700 relative w-full aspect-1925/638">
+            <img
+              src={hcColors60PercentKeeb}
+              className="w-full max-w-180 object-contain h-full"
+            />
             <motion.img
               src={hcKeycap}
-              width={75}
-              height={75}
-              className="absolute top-8 left-15"
+              className="absolute top-[12%] left-[8%] w-[11%]"
               initial={{ opacity: 0, scale: 2.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 }}
@@ -260,11 +271,10 @@ function App() {
       <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Pick a custom keycap, and get it IRL for free!
+            Ship one project, pick a custom keycap, and get it IRL for free!
           </b>
           <p className="text-3xl">
-            You must ship a project in order to get your first custom key. These
-            designs are not final!
+            Then show it off on your virtual keyboard! (Designs not final.)
           </p>
         </div>
         <div className="flex">
@@ -423,8 +433,8 @@ function App() {
               Next, customize your own virtual keyboard.
             </b>
             <p className="text-4xl">
-              The keys you put on your virtual keyboard are the keys that you’ll
-              get in real life.
+              Add colors, deskpads, patterns, and anything you want! If you got
+              custom keycaps, you can add them here!
             </p>
             <p className="text-2xl">
               You’ll also be able to see other people’s keyboards.
@@ -479,8 +489,8 @@ function App() {
         </Collapsible>
         <Collapsible title="What can I build?">
           <p>
-            You can RSVP early for the event to express your interest!
-            We&apos;ll share additional info when the event goes live.
+            Build any project related to keyboards! Software and hardware
+            projects are allowed.
           </p>
         </Collapsible>
         <Collapsible title="Will there be different keyboards and accessories in the shop?">
@@ -490,17 +500,13 @@ function App() {
         </Collapsible>
         <Collapsible title="Can I pick the custom keycaps I get shipped for free?">
           <p>
-            Yep! You can do this by going to your virtual keyboard, selecting
-            the key you want, and choosing the keycap design. We'll refer to
-            your virtual keyboard to ship the right keycaps. Subject to
-            availability.
+            Yep! We'll send you information on getting your free keycaps once
+            you ship your first project or complete your virtual keyboard.
+            Subject to availability.
           </p>
         </Collapsible>
         <Collapsible title="How can I track time?">
-          <p>
-            You'll use Hackatime to track code and CAD activity and Lapse to
-            record yourself building.
-          </p>
+          <p>You'll use Hackatime to track project time.</p>
         </Collapsible>
         <Collapsible title="Do I have to be committed to this event when I RSVP?">
           <p>Nope! This is just to gauge interest within the community.</p>
