@@ -51,7 +51,7 @@ function App() {
           </div>
           <div className="flex flex-col gap-8">
             <p className="text-4xl">
-              <b>build your own virtual keyboard</b> by making any keeb-related
+              <b>build your own virtual keyboard</b> by making keyboard-related
               projects!
             </p>
             <p className="text-4xl">
