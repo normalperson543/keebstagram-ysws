@@ -11,8 +11,11 @@ import hcFlag from "./assets/flag-standalone-wtransparent.svg";
 import { motion } from "motion/react";
 import Collapsible from "./components/collapsible";
 import dinoWant from "./assets/dinos/dino-want-modified.png";
+import { useNavigate } from "react-router";
+
 import { CircleQuestionMarkIcon } from "lucide-react";
 function App() {
+  const nav = useNavigate();
   return (
     <div className="w-full flex flex-col gap-2">
       <div
@@ -65,8 +68,8 @@ function App() {
             placeholder="enter your email (teens 13-18)"
           />
           <div className="flex flex-col gap-4 w-full md:flex-row">
-            <button className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative text-start">
-              rsvp!
+            <button className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative text-start" onClick={() => nav("/app/profile")}>
+              preview platform!
               <img
                 src={dinoWant}
                 className="absolute right-4 bottom-0"
@@ -384,7 +387,7 @@ function App() {
             Essential or similar mouse. That means 26 hours of coding!
           </p>
         </div>
-        <div className="relative flex flex-row gap-4 items-center">
+        <div className="relative flex flex-row gap-4 items-center w-2/3">
           <motion.div
             className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 md:flex flex-col items-center justify-center -rotate-20 hidden"
             initial={{ opacity: 0, scale: 2 }}
@@ -396,8 +399,8 @@ function App() {
             </div>
             <p className="text-3xl">keys</p>
           </motion.div>
-          <img src={s98} width={600} />
-          <img src={da} width="max-w-36" />
+            <img src={s98} className="w-5/6" />
+            <img src={da} className="w-1/6" />
         </div>
         <p className="text-xl">
           Want something else? We'll have a selection of keyboards at each level

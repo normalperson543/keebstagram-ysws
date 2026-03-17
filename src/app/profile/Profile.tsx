@@ -7,6 +7,7 @@ import {
   DeskpadTypes,
   KeycapTypes,
 } from "../../lib/constants";
+import { Link } from "react-router";
 
 function ProfileUI() {
   const claimedCustomKeycaps = 1;
@@ -79,20 +80,25 @@ function ProfileUI() {
     );
   }
   return (
-    <div className="w-full flex flex-col gap-2">
+    <div className="w-full flex flex-col gap-2 items-center">
       <div
         className="w-full p-3 md:p-8 flex bg-cover gap-4 items-center"
         style={{ backgroundImage: `url(${orangePaper})` }}
       >
         <div className="flex gap-6 flex-1 items-center">
-          <div
-            className="rounded p-4 text-3xl shadow-md shadow-gray-500 w-fit text-center bg-cover relative flex items-center"
-            style={{ backgroundImage: `url(${paper})` }}
-          >
-            <img src="/assets/keycaps/hc.png" className="-left-4 relative w-12 h-12 -rotate-12" />
-            <b>keeb</b>
-            <span className="font-thin">stagram!</span>
-          </div>
+          <Link to="/">
+            <div
+              className="rounded p-4 text-3xl shadow-md shadow-gray-500 w-fit text-center bg-cover relative flex items-center"
+              style={{ backgroundImage: `url(${paper})` }}
+            >
+              <img
+                src="/assets/keycaps/hc.png"
+                className="-left-4 relative w-12 h-12 -rotate-12"
+              />
+              <b>keeb</b>
+              <span className="font-thin">stagram!</span>
+            </div>
+          </Link>
           <button className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 duration-200 relative text-start">
             my profile
           </button>
@@ -134,7 +140,10 @@ function ProfileUI() {
         </div>
         <div
           className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative bg-center aspect-1920/768 w-2/3 box-border"
-          style={{ backgroundImage: `url(${DeskpadTypes[deskpadType]})`, border: deskpadType === 0 ? "8px dashed #aaa" : "" }}
+          style={{
+            backgroundImage: `url(${DeskpadTypes[deskpadType]})`,
+            border: deskpadType === 0 ? "8px dashed #aaa" : "",
+          }}
           onClick={(e) => handleChangeDeskpad(e)}
         >
           <div className="bg-gray-700 relative w-full aspect-1925/638">
@@ -174,11 +183,26 @@ function ProfileUI() {
           It&apos;ll cycle to the next available style for that part.
         </div>
       </div>
-      <div className="flex items-center justify-between w-full">
-        <p>Projects</p>
+      <div className="flex items-center justify-between w-2/3 px-12">
+        <h2 className="text-3xl font-bold">Projects</h2>
         <button className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 duration-200 relative text-start">
           Create
         </button>
+      </div>
+      <div className="flex flex-col gap-4 w-2/3 px-12">
+        <div className="flex gap-6 items-center ">
+          <img
+            src="https://ca.slack-edge.com/E09V59WQY1E-U098F6EJ34J-e8250c861b27-512"
+            className="w-12 h-12 rounded-full"
+          />
+          <div className="flex flex-col gap-2">
+            <p className="text-xl font-bold">normalperson543</p>
+            <p>2 days ago</p>
+          </div>
+        </div>
+        <img src="/assets/examples/shipped-project.png" className="max-h-72" />
+        <p className="text-2xl font-bold">Keebstagram YSWS</p>
+        <p>The website you are looking at right now!</p>
       </div>
     </div>
   );
