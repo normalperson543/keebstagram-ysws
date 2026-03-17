@@ -4,11 +4,6 @@ import paper from "./assets/paper.jpg";
 import r65 from "./assets/keebs/r65.png";
 import f75 from "./assets/keebs/f75.png";
 import s98 from "./assets/keebs/s98.png";
-import hcKeycap from "./assets/keycaps/hc.png";
-import clubsKeycap from "./assets/keycaps/clubs.png";
-import flagKeycap from "./assets/keycaps/flag.png";
-import hcbKeycap from "./assets/keycaps/hcb.png";
-import htKeycap from "./assets/keycaps/ht.png";
 import blank60PercentKeeb from "./assets/blank-keebs/60/blank.png";
 import hcColors60PercentKeeb from "./assets/blank-keebs/60/hackclub-colors.png";
 import deskpad from "./assets/desk-pads/rawr.jpg";
@@ -94,7 +89,7 @@ function App() {
           </div>
           <div className="hidden md:block">
             <motion.img
-              src={hcKeycap}
+              src="/assets/keycaps/"
               className="absolute top-12"
               width={150}
               height={150}
