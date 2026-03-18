@@ -14,6 +14,7 @@ import dinoWant from "./assets/dinos/dino-want-modified.png";
 import { useNavigate } from "react-router";
 import { CircleArrowDownIcon, CircleQuestionMarkIcon } from "lucide-react";
 import { KeycapTypes } from "./lib/constants";
+import KbdCustomizer from "./components/kbd-customizer";
 
 function App() {
   const nav = useNavigate();
@@ -235,13 +236,8 @@ function App() {
             !
           </p>
         </div>
-        <div
-          className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
-          style={{ backgroundImage: `url(${"/assets/desk-pads/rawr.jpg"})` }}
-        >
-          <div className="bg-gray-700">
-            <img src="/assets/blank-keebs/60/hackclub-colors.png" width={720} />
-          </div>
+        <div className="relative">
+          <KbdCustomizer claimedCustomKeycaps={7} />
           <motion.div
             className="rounded p-4 text-2xl shadow-md shadow-gray-500 w-fit text-center bg-cover absolute -bottom-12 -right-8 rotate-2"
             style={{ backgroundImage: `url(${paper})` }}
@@ -249,7 +245,7 @@ function App() {
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", delay: 0.25 }}
           >
-            @normalperson543's keyboard
+             Click anywhere on the keyboard to customize it!
           </motion.div>
         </div>
       </div>

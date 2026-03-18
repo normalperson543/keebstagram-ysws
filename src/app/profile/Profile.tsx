@@ -8,8 +8,9 @@ import {
   KeycapTypes,
 } from "../../lib/constants";
 import { Link } from "react-router";
-import { CheckIcon, HeartIcon } from "lucide-react";
+import { CheckIcon, HeartIcon, PlayIcon } from "lucide-react";
 import hcFlag from "../../assets/flag-standalone-wtransparent.svg";
+import ghLogo from "../../assets/logos/gh.svg"
 function ProfileUI() {
   const claimedCustomKeycaps = 1;
   const [blankKeebType, setBlankKeebType] = useState(1);
@@ -122,7 +123,11 @@ function ProfileUI() {
         />
         <div className="flex flex-col items-end">
           <p className="text-3xl font-bold">normalperson543</p>
-          <p className="text-xl">4/61 keys - 6% complete</p>
+          <div className="flex gap-2 items-center">
+            <img src="/assets/keycaps/hc.png" width={32} />
+            <p className="text-xl">4/61 - 6% complete</p>
+          </div>
+          
         </div>
       </div>
       <div className="p-12 flex flex-col items-center gap-4">
@@ -231,10 +236,20 @@ function ProfileUI() {
         />
         <p className="text-2xl font-bold">Keebstagram YSWS</p>
         <p>The website you are looking at right now!</p>
-        <button className="border border-orange-900 bg-orange-200 p-4 text-3xl cursor-pointer hover:scale-102 hover:rotate-1 duration-200 relative text-start flex gap-4 w-fit">
-          <HeartIcon />
-          67
-        </button>
+        <div className="flex gap-6 items-center">
+          <button className="border border-orange-900 bg-orange-200 p-4 text-3xl cursor-pointer hover:scale-102 hover:rotate-1 duration-200 relative text-start flex gap-4 w-fit items-center">
+            <HeartIcon />
+            67
+          </button>
+          <button className="border border-orange-900 bg-orange-100 p-4 text-3xl cursor-pointer hover:scale-102 hover:rotate-1 duration-200 relative text-start flex gap-4 w-fit items-center">
+            <img src={ghLogo} width={32} />
+            Repository
+          </button>
+          <button className="border border-orange-900 bg-orange-100 p-4 text-3xl cursor-pointer hover:scale-102 hover:rotate-1 duration-200 relative text-start flex gap-4 w-fit items-center">
+            <PlayIcon />
+            Live Demo
+          </button>
+        </div>
       </div>
       <div className="p-16 bg-black  text-white flex flex-col items-center gap-2 w-full mt-8">
         <div className="flex flex-row gap-4 items-start w-full justify-center">
