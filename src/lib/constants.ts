@@ -9,9 +9,8 @@ export const KeycapTypes = [
 ];
 export const Blank60KeyboardTypes = [
   "/assets/blank-keebs/60/blank.png",
-  "/assets/blank-keebs/60/hackclub-colors.png"
-]
-export const DeskpadTypes = [
-  "",
-  "/assets/desk-pads/rawr.jpg"
-]
+  "/assets/blank-keebs/60/hackclub-colors.png",
+  "/assets/blank-keebs/60/blue.png",
+  "/assets/blank-keebs/60/pink.png",
+];
+export const DeskpadTypes = ["", "/assets/desk-pads/rawr.jpg"];

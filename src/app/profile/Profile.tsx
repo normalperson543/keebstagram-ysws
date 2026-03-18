@@ -8,7 +8,7 @@ import {
   KeycapTypes,
 } from "../../lib/constants";
 import { Link } from "react-router";
-import { HeartIcon } from "lucide-react";
+import { CheckIcon, HeartIcon } from "lucide-react";
 import hcFlag from "../../assets/flag-standalone-wtransparent.svg";
 function ProfileUI() {
   const claimedCustomKeycaps = 1;
@@ -211,12 +211,18 @@ function ProfileUI() {
               <p>2 days ago</p>
             </div>
           </div>
-          <div className="flex flex-col gap-2 items-end">
-            <div className="flex items-center gap-3">
-              <img src="/assets/keycaps/hc.png" width={36} />
-              <p className="text-3xl">4</p>
+          <div className="flex gap-6 items-center">
+            <div className="uppercase bg-green-100 border border-green-800 p-2 rounded-full flex items-center gap-2">
+              <CheckIcon />
+              Approved
             </div>
-            <p>1:01 hours</p>
+            <div className="flex flex-col gap-2 items-end">
+              <div className="flex items-center gap-3">
+                <img src="/assets/keycaps/hc.png" width={36} />
+                <p className="text-3xl">4</p>
+              </div>
+              <p>1:01 hours</p>
+            </div>
           </div>
         </div>
         <img

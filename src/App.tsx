@@ -12,7 +12,7 @@ import { motion } from "motion/react";
 import Collapsible from "./components/collapsible";
 import dinoWant from "./assets/dinos/dino-want-modified.png";
 import { useNavigate } from "react-router";
-import { CircleQuestionMarkIcon } from "lucide-react";
+import { CircleArrowDownIcon, CircleQuestionMarkIcon } from "lucide-react";
 import { KeycapTypes } from "./lib/constants";
 
 function App() {
@@ -85,15 +85,20 @@ function App() {
               <CircleQuestionMarkIcon width={48} height={48} />
             </button>
           </div>
-          <div>
-            <b>click and hover on things for easter eggs! :3</b>
+          <div className="flex flex-col gap-2 items-center text-center">
             <p className="text-md">
               dino image from{" "}
               <a href="https://rawr.hackclub.com" className="underline">
                 rawr.hackclub.com
-              </a>
-              !
+              </a>{" "}
+              :3
             </p>
+            <div className="flex gap-2 animate-bounce items-center">
+              <CircleArrowDownIcon width={24} />
+              <p className="text-3xl uppercase font-bold">
+                Scroll down for more!
+              </p>
+            </div>
           </div>
           <div className="hidden md:block">
             <motion.img
@@ -289,7 +294,7 @@ function App() {
             />
             <motion.img
               src="/assets/keycaps/hc.png"
-              className="absolute top-[12%] left-[8%] w-[11%]"
+              className="absolute top-[20%] left-[10.5%] w-[6%]"
               initial={{ opacity: 0, scale: 2.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 }}
@@ -352,8 +357,8 @@ function App() {
       <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Or, get 84 keys, and get this 75% keyboard, AND a Logitech desk pad, and 5
-            total custom keys.
+            Or, get 84 keys, and get this 75% keyboard, AND a Logitech desk pad,
+            and 5 total custom keys.
           </b>
           <p className="text-2xl">
             EPOMAKER X Aula F75 MAX or similar 75%-TKL keyboard, and a Logitech
