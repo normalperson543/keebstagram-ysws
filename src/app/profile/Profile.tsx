@@ -12,7 +12,7 @@ import { HeartIcon } from "lucide-react";
 import hcFlag from "../../assets/flag-standalone-wtransparent.svg";
 function ProfileUI() {
   const claimedCustomKeycaps = 1;
-  const [blankKeebType, setBlankKeebType] = useState(0);
+  const [blankKeebType, setBlankKeebType] = useState(1);
   const [deskpadType, setDeskpadType] = useState(1);
   const [keycaps, setKeycaps] = useState([
     {
@@ -81,7 +81,13 @@ function ProfileUI() {
     );
   }
   return (
-    <div className="w-full flex flex-col gap-2 items-center">
+    <div className="w-full flex flex-col items-center">
+      <div className="w-full p-2 bg-yellow-400 text-center font-bold">
+        <p>
+          This is a <b>preview</b> of the keebstagram platform and a POC on how
+          your virtual keyboard and profile will look like!
+        </p>
+      </div>
       <div
         className="w-full p-3 md:p-8 flex bg-cover gap-4 items-center"
         style={{ backgroundImage: `url(${orangePaper})` }}
@@ -184,7 +190,7 @@ function ProfileUI() {
           It&apos;ll cycle to the next available style for that part.
         </div>
       </div>
-      <div className="flex items-center justify-between w-2/3 px-12">
+      <div className="flex items-center justify-between w-2/3 px-12 py-4">
         <h2 className="text-3xl font-bold">Projects</h2>
         <button className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 duration-200 relative text-start">
           Create
@@ -205,9 +211,12 @@ function ProfileUI() {
               <p>2 days ago</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <img src="/assets/keycaps/hc.png" width={36} />
-            <p className="text-3xl">4</p>
+          <div className="flex flex-col gap-2 items-end">
+            <div className="flex items-center gap-3">
+              <img src="/assets/keycaps/hc.png" width={36} />
+              <p className="text-3xl">4</p>
+            </div>
+            <p>1:01 hours</p>
           </div>
         </div>
         <img
@@ -221,7 +230,7 @@ function ProfileUI() {
           67
         </button>
       </div>
-      <div className="p-16 bg-black  text-white flex flex-col items-center gap-2 w-full">
+      <div className="p-16 bg-black  text-white flex flex-col items-center gap-2 w-full mt-8">
         <div className="flex flex-row gap-4 items-start w-full justify-center">
           <img src={hcFlag} width={64} />
           <p className="text-2xl font-bold">Hack Club</p> <p>|</p>
@@ -280,7 +289,7 @@ function ProfileUI() {
             href="http://creativecommons.org/licenses/by/4.0/"
             className="underline"
           >
-            CC BY-NC-SA 4.0
+            CC BY 4.0
           </a>
         </p>
         <p className="text-md text-gray-400">

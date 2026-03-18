@@ -12,8 +12,9 @@ import { motion } from "motion/react";
 import Collapsible from "./components/collapsible";
 import dinoWant from "./assets/dinos/dino-want-modified.png";
 import { useNavigate } from "react-router";
-
 import { CircleQuestionMarkIcon } from "lucide-react";
+import { KeycapTypes } from "./lib/constants";
+
 function App() {
   const nav = useNavigate();
   return (
@@ -54,7 +55,7 @@ function App() {
               projects!
             </p>
             <p className="text-4xl">
-              get <b>custom hack club keycaps,</b>
+              get <b>custom hack club keycaps and deskpads,</b>
             </p>
             <div className="flex flex-col gap-4">
               <p className="text-4xl">
@@ -68,7 +69,10 @@ function App() {
             placeholder="enter your email (teens 13-18)"
           />
           <div className="flex flex-col gap-4 w-full md:flex-row">
-            <button className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative text-start" onClick={() => nav("/app/profile")}>
+            <button
+              className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative text-start"
+              onClick={() => nav("/app/profile")}
+            >
               preview platform!
               <img
                 src={dinoWant}
@@ -154,7 +158,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-12 p-24">
+      <div className="flex flex-col lg:flex-row gap-12 md:p-24 p-12">
         <div className="w-full lg:w-1/2 flex flex-col gap-6 text-3xl">
           <p>
             <b>mechanical keyboards are cool!</b> they can sound really creamy,
@@ -174,7 +178,7 @@ function App() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
+      <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-6">
           <b className="text-4xl">Well, how do I get one?</b>
           <p className="text-4xl">You start with a 60% virtual keyboard.</p>
@@ -191,7 +195,10 @@ function App() {
               B20bob
             </a>{" "}
             on Printables,{" "}
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" className="underline">
+            <a
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              className="underline"
+            >
               CC BY-NC-SA 4.0
             </a>
           </p>
@@ -205,7 +212,7 @@ function App() {
           <img src="/assets/blank-keebs/60/blank.png" width={720} />
         </motion.div>
       </div>
-      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
+      <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
             Customize your virtual keyboard. Add fun colors, custom keycaps,
@@ -241,13 +248,36 @@ function App() {
           </motion.div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
+      <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
             Every 15 minutes you make something, one key gets added to your
             keyboard.
           </b>
         </div>
+        <p className="text-md">
+          Keycap model credits:{" "}
+          <a
+            href="https://www.printables.com/model/118708-simple-cherry-mx-keycap"
+            className="underline"
+          >
+            Simple Cherry MX Keycap
+          </a>{" "}
+          from{" "}
+          <a
+            href="https://www.printables.com/@3dNerdcave"
+            className="underline"
+          >
+            3dNerdcave
+          </a>{" "}
+          on Printables,{" "}
+          <a
+            href="http://creativecommons.org/licenses/by/4.0/"
+            className="underline"
+          >
+            CC BY 4.0
+          </a>
+        </p>
         <div
           className="bg-cover rounded-lg shadow-md shadow-gray-500 p-16 relative"
           style={{ backgroundImage: `url("/assets/desk-pads/rawr.jpg")` }}
@@ -267,59 +297,32 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 px-24 py-18 text-center items-center justify-center">
+      <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Ship one project, pick a custom keycap, and get it IRL for free!
+            Ship one project, get a Hack Club themed custom keycap for free!
           </b>
           <p className="text-3xl">
             Then show it off on your virtual keyboard! (Designs not final.)
           </p>
         </div>
-        <div className="flex">
-          {/*<motion.img
-            src={hcKeycap}
-            width={240}
-            height={240}
-            initial={{ x: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ x: 0, opacity: 1, rotate: 12 }}
-            transition={{ type: "spring" }}
-          />
-          <motion.img
-            src={hcbKeycap}
-            width={240}
-            height={240}
-            initial={{ x: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ x: 0, opacity: 1, rotate: -12 }}
-            transition={{ type: "spring", delay: 0.1 }}
-          />
-          <motion.img
-            src={clubsKeycap}
-            width={240}
-            height={240}
-            initial={{ x: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ x: 0, opacity: 1, rotate: 12 }}
-            transition={{ type: "spring", delay: 0.2 }}
-          />
-          <motion.img
-            src={flagKeycap}
-            width={240}
-            height={240}
-            initial={{ x: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ x: 0, opacity: 1, rotate: -12 }}
-            transition={{ type: "spring", delay: 0.3 }}
-          />
-          <motion.img
-            src={htKeycap}
-            width={240}
-            height={240}
-            initial={{ x: -120, opacity: 0, rotate: 0 }}
-            whileInView={{ x: 0, opacity: 1, rotate: 12 }}
-            transition={{ type: "spring", delay: 0.4 }}
-          />*/}
+        <div className="flex gap-[5%]">
+          {KeycapTypes.slice(1).map((k, i) => (
+            <motion.img
+              src={k}
+              className="aspect-square w-1/6"
+              initial={{ x: -40, opacity: 0, rotate: 0 }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                rotate: (i % 2 === 0 ? -1 : 1) * 12,
+              }}
+              transition={{ type: "spring", delay: i * 0.1 }}
+            />
+          ))}
         </div>
       </div>
-      <div className="flex flex-col gap-12 px-24 py-18 text-center items-center justify-center">
+      <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
             Collect all 61 keys, and get this 60% keyboard IRL, AND a wrist
@@ -346,10 +349,10 @@ function App() {
           <img src={wristrest} width={480} className="absolute -bottom-24" />
         </div>
       </div>
-      <div className="flex flex-col gap-12 px-24 py-18 text-center items-center justify-center">
+      <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Or, get 84 keys, and get this 75% keyboard, AND a desk pad, and 5
+            Or, get 84 keys, and get this 75% keyboard, AND a Logitech desk pad, and 5
             total custom keys.
           </b>
           <p className="text-2xl">
@@ -376,7 +379,7 @@ function App() {
           <img src={logiPad} width={720} />
         </div>
       </div>
-      <div className="flex flex-col gap-12 px-24 py-18 text-center items-center justify-center">
+      <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
             Or, get 104 keys, and get up to a full-size keyboard, AND a gaming
@@ -399,18 +402,18 @@ function App() {
             </div>
             <p className="text-3xl">keys</p>
           </motion.div>
-            <img src={s98} className="w-5/6" />
-            <img src={da} className="w-1/6" />
+          <img src={s98} className="w-5/6" />
+          <img src={da} className="w-1/6" />
         </div>
         <p className="text-xl">
           Want something else? We'll have a selection of keyboards at each level
           to select from.
         </p>
       </div>
-      <div className="flex flex-col gap-8 px-24 py-24">
+      <div className="flex flex-col gap-8 md:px-24 px-12 py-24">
         <div className="flex flex-row gap-12 relative">
           <motion.div
-            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-1/2 bg-cover"
+            className="rounded p-4 text-4xl shadow-md shadow-gray-500 lg:w-1/2 w-full bg-cover"
             style={{ backgroundImage: `url(${paper})` }}
             initial={{ x: -24, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -422,7 +425,7 @@ function App() {
         </div>
         <div className="flex flex-row gap-12 relative">
           <motion.div
-            className="rounded p-4 shadow-md shadow-gray-500 w-1/2 bg-cover flex flex-col gap-2"
+            className="rounded p-4 shadow-md shadow-gray-500 lg:w-1/2 w-full bg-cover flex flex-col gap-2"
             style={{ backgroundImage: `url(${paper})` }}
             initial={{ x: 24, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -432,8 +435,8 @@ function App() {
               Next, customize your own virtual keyboard.
             </b>
             <p className="text-4xl">
-              Add colors, deskpads, patterns, and anything you want! If you got
-              custom keycaps, you can add them here!
+              Add colors, deskpads, patterns, and anything you want! If you
+              claimed custom keycaps, you can add them here!
             </p>
             <p className="text-2xl">
               You’ll also be able to see other people’s keyboards.
@@ -442,7 +445,7 @@ function App() {
         </div>
         <div className="flex flex-row gap-12 relative">
           <motion.div
-            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-1/2 bg-cover"
+            className="rounded p-4 text-4xl shadow-md shadow-gray-500 lg:w-1/2 w-full bg-cover"
             style={{ backgroundImage: `url(${paper})` }}
             initial={{ x: -24, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -463,7 +466,7 @@ function App() {
           </motion.div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 px-24 py-18">
+      <div className="flex flex-col gap-4 md:px-24 px-12 py-18">
         <div>
           <h2 className="text-4xl font-bold">FAQ!</h2>
           <p className="text-xl">We know you have questions!</p>
@@ -499,9 +502,9 @@ function App() {
         </Collapsible>
         <Collapsible title="Can I pick the custom keycaps I get shipped for free?">
           <p>
-            Yep! We'll send you information on getting your free keycaps once
-            you ship your first project or complete your virtual keyboard.
-            Subject to availability.
+            Due to logistical concerns for availability of keycaps (we buy an
+            equal amount of keycaps per design), we cannot unfortunately
+            guarantee the keycap you get.
           </p>
         </Collapsible>
         <Collapsible title="How can I track time?">
@@ -541,7 +544,9 @@ function App() {
                 Open source.
               </a>
             </p>
-            <p>Need to get in touch? Check out the #keebstagram-ysws channel!</p>
+            <p>
+              Need to get in touch? Check out the #keebstagram-ysws channel!
+            </p>
           </div>
         </div>
       </div>

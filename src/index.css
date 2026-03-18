@@ -1,15 +1,28 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Fuzzy Bubbles";
-  src: url("./assets/fonts/fuzzy-bubbles.ttf");
+    font-family: "Fuzzy Bubbles";
+    src: url("./assets/fonts/fuzzy-bubbles.ttf");
 }
 
-:root, html, body {
-  width: 100%;
-  color: #58380A;
+@theme {
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+:root,
+html,
+body {
+    width: 100%;
+    color: #58380a;
 }
 html {
-  background-color: #FFF7EB;
-  font-family: "Fuzzy Bubbles", sans-serif;
+    background-color: #fff7eb;
+    font-family: "Fuzzy Bubbles", sans-serif;
 }
