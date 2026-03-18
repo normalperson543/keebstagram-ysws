@@ -191,7 +191,7 @@ function App() {
               B20bob
             </a>{" "}
             on Printables,{" "}
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" className="underline">
               CC BY-NC-SA 4.0
             </a>
           </p>
@@ -534,14 +534,14 @@ function App() {
             <p>
               Made with love by @normalperson543.{" "}
               <a
-                href="https://github.com/normalperson543/keystagram-ysws"
+                href="https://github.com/normalperson543/keebstagram-ysws"
                 className="underline"
                 target="_blank"
               >
                 Open source.
               </a>
             </p>
-            <p>Need to get in touch? Check out the #keystagram-ysws channel!</p>
+            <p>Need to get in touch? Check out the #keebstagram-ysws channel!</p>
           </div>
         </div>
       </div>

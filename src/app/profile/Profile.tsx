@@ -8,7 +8,8 @@ import {
   KeycapTypes,
 } from "../../lib/constants";
 import { Link } from "react-router";
-
+import { HeartIcon } from "lucide-react";
+import hcFlag from "../../assets/flag-standalone-wtransparent.svg";
 function ProfileUI() {
   const claimedCustomKeycaps = 1;
   const [blankKeebType, setBlankKeebType] = useState(0);
@@ -155,12 +156,12 @@ function ProfileUI() {
             {keycaps.map((k) => (
               <motion.img
                 src={KeycapTypes[k.type]}
-                className={`absolute w-[7%]`}
+                className={`absolute w-[6%]`}
                 initial={{ opacity: 0, scale: 2.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.05 * k.id }}
                 onClick={(e) => handleChangeKeycap(e, k.id)}
-                style={{ top: "18%", left: `${10 + k.id * 6.6}%` }}
+                style={{ top: "20%", left: `${10.5 + k.id * 6.6}%` }}
               />
             ))}
           </div>
@@ -189,20 +190,105 @@ function ProfileUI() {
           Create
         </button>
       </div>
-      <div className="flex flex-col gap-4 w-2/3 px-12">
-        <div className="flex gap-6 items-center ">
-          <img
-            src="https://ca.slack-edge.com/E09V59WQY1E-U098F6EJ34J-e8250c861b27-512"
-            className="w-12 h-12 rounded-full"
-          />
-          <div className="flex flex-col gap-2">
-            <p className="text-xl font-bold">normalperson543</p>
-            <p>2 days ago</p>
+      <div
+        className="flex flex-col gap-4 w-2/3 p-12 bg-cover rounded shadow-md shadow-gray-500"
+        style={{ backgroundImage: `url(${paper}` }}
+      >
+        <div className="flex gap-4 items-center">
+          <div className="flex gap-6 items-center flex-1">
+            <img
+              src="https://ca.slack-edge.com/E09V59WQY1E-U098F6EJ34J-e8250c861b27-512"
+              className="w-12 h-12 rounded-full"
+            />
+            <div className="flex flex-col gap-2">
+              <p className="text-xl font-bold">normalperson543</p>
+              <p>2 days ago</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <img src="/assets/keycaps/hc.png" width={36} />
+            <p className="text-3xl">4</p>
           </div>
         </div>
-        <img src="/assets/examples/shipped-project.png" className="max-h-72" />
+        <img
+          src="/assets/examples/shipped-project.png"
+          className="max-h-72 self-center"
+        />
         <p className="text-2xl font-bold">Keebstagram YSWS</p>
         <p>The website you are looking at right now!</p>
+        <button className="border border-orange-900 bg-orange-200 p-4 text-3xl cursor-pointer hover:scale-102 hover:rotate-1 duration-200 relative text-start flex gap-4 w-fit">
+          <HeartIcon />
+          67
+        </button>
+      </div>
+      <div className="p-16 bg-black  text-white flex flex-col items-center gap-2 w-full">
+        <div className="flex flex-row gap-4 items-start w-full justify-center">
+          <img src={hcFlag} width={64} />
+          <p className="text-2xl font-bold">Hack Club</p> <p>|</p>
+          <a href="https://hackclub.com" className="underline">
+            About
+          </a>
+          <p>|</p>
+          <p>
+            Made with love by @normalperson543.{" "}
+            <a
+              href="https://github.com/normalperson543/keebstagram-ysws"
+              className="underline"
+              target="_blank"
+            >
+              Open source.
+            </a>
+          </p>
+        </div>
+        <p className="text-md text-gray-400">
+          Keyboard model credits:{" "}
+          <a
+            href="https://www.printables.com/model/1129171-60-percent-keyboard-plate-ansi/files"
+            className="underline"
+          >
+            60 percent keyboard plate (ANSI)
+          </a>{" "}
+          from{" "}
+          <a href="https://www.printables.com/@B20bob" className="underline">
+            B20bob
+          </a>{" "}
+          on Printables,{" "}
+          <a
+            href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+            className="underline"
+          >
+            CC BY-NC-SA 4.0
+          </a>
+        </p>
+        <p className="text-md text-gray-400">
+          Keycap model credits:{" "}
+          <a
+            href="https://www.printables.com/model/118708-simple-cherry-mx-keycap"
+            className="underline"
+          >
+            Simple Cherry MX Keycap
+          </a>{" "}
+          from{" "}
+          <a
+            href="https://www.printables.com/@3dNerdcave"
+            className="underline"
+          >
+            3dNerdcave
+          </a>{" "}
+          on Printables,{" "}
+          <a
+            href="http://creativecommons.org/licenses/by/4.0/"
+            className="underline"
+          >
+            CC BY-NC-SA 4.0
+          </a>
+        </p>
+        <p className="text-md text-gray-400">
+          Deskpad is from{" "}
+          <a href="https://rawr.hackclub.com" className="underline">
+            rawr.hackclub.com!
+          </a>
+        </p>
       </div>
     </div>
   );
