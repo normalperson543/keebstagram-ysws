@@ -4,9 +4,9 @@ import paper from "./assets/paper.jpg";
 import r65 from "./assets/keebs/r65.png";
 import f75 from "./assets/keebs/f75.png";
 import s98 from "./assets/keebs/s98.png";
-import logiPad from "./assets/accessories/logi-pad.png";
 import wristrest from "./assets/accessories/wrist-rest.png";
-import da from "./assets/accessories/da.png";
+import customPadS from "./assets/accessories/deskpad-s.png";
+import customPadM from "./assets/accessories/deskpad-m.png";
 import hcFlag from "./assets/flag-standalone-wtransparent.svg";
 import { motion } from "motion/react";
 import Collapsible from "./components/collapsible";
@@ -15,7 +15,10 @@ import { useNavigate } from "react-router";
 import { CircleArrowDownIcon, CircleQuestionMarkIcon } from "lucide-react";
 import { KeycapTypes } from "./lib/constants";
 import KbdCustomizer from "./components/kbd-customizer";
-
+import dinoTired from "./assets/dinos/tired-dino.png";
+import create from "./assets/drawings/create.png";
+import customize from "./assets/drawings/customize.png";
+import signUp from "./assets/drawings/sign-up.png";
 function App() {
   const nav = useNavigate();
   return (
@@ -52,15 +55,15 @@ function App() {
           </div>
           <div className="flex flex-col gap-8">
             <p className="text-4xl">
-              <b>build your own virtual keyboard</b> by making keyboard-related
-              projects!
+              making keyboard-related projects,{" "}
+              <b>build your own virtual keyboard</b>, and share your creations!
             </p>
             <p className="text-4xl">
-              get <b>custom hack club keycaps and deskpads,</b>
+              get <b>exclusive hack club keycaps and deskpads,</b>
             </p>
             <div className="flex flex-col gap-4">
               <p className="text-4xl">
-                and, a real <b>mechanical keyboard</b> irl and accessories!
+                and, a real <b>mechanical keyboard</b> irl!
               </p>
             </div>
           </div>
@@ -87,13 +90,6 @@ function App() {
             </button>
           </div>
           <div className="flex flex-col gap-2 items-center text-center">
-            <p className="text-md">
-              dino image from{" "}
-              <a href="https://rawr.hackclub.com" className="underline">
-                rawr.hackclub.com
-              </a>{" "}
-              :3
-            </p>
             <div className="flex gap-2 animate-bounce items-center">
               <CircleArrowDownIcon width={24} />
               <p className="text-3xl uppercase font-bold">
@@ -174,6 +170,10 @@ function App() {
             now you can get your own, <b>for free.</b>
           </p>
           <p>
+            and you'll get EXCLUSIVE merch like <b>custom keycaps</b> and{" "}
+            <b>desk pads.</b>
+          </p>
+          <p>
             and, you'll meet a lot of cool hackclubbers when you're at it too.
           </p>
         </div>
@@ -210,12 +210,12 @@ function App() {
           </p>
         </div>
         <motion.div
-          className="bg-gray-700 relative"
+          className="bg-gray-700 relative w-full max-w-180"
           initial={{ top: -24, opacity: 0, rotate: -12 }}
           whileInView={{ top: 0, opacity: 1, rotate: 0 }}
           transition={{ type: "spring", delay: 0.1 }}
         >
-          <img src="/assets/blank-keebs/60/blank.png" width={720} />
+          <img src="/assets/blank-keebs/60/blank.png" />
         </motion.div>
       </div>
       <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
@@ -228,13 +228,6 @@ function App() {
             And share it with the community. You&apos;ll be able to see other
             people&apos;s keyboards (and their progress!)
           </p>
-          <p className="text-md">
-            dino image from{" "}
-            <a href="https://rawr.hackclub.com" className="underline">
-              rawr.hackclub.com
-            </a>
-            !
-          </p>
         </div>
         <div className="relative">
           <KbdCustomizer claimedCustomKeycaps={7} />
@@ -245,8 +238,35 @@ function App() {
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", delay: 0.25 }}
           >
-             Click anywhere on the keyboard to customize it!
+            Click anywhere on the keyboard to customize it!
           </motion.div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
+        <div className="flex flex-col gap-4">
+          <b className="text-4xl">
+            Ship one project, get a physical, Hack Club themed, custom keycap
+            shipped to you for free!
+          </b>
+          <p className="text-3xl">
+            Then show it off on your virtual keyboard! Everyone gets to see your
+            shared project!
+          </p>
+        </div>
+        <div className="flex gap-[5%]">
+          {KeycapTypes.slice(1).map((k, i) => (
+            <motion.img
+              src={k}
+              className="aspect-square w-1/6"
+              initial={{ x: -40, opacity: 0, rotate: 0 }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                rotate: (i % 2 === 0 ? -1 : 1) * 12,
+              }}
+              transition={{ type: "spring", delay: i * 0.1 }}
+            />
+          ))}
         </div>
       </div>
       <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
@@ -255,6 +275,10 @@ function App() {
             Every 15 minutes you make something, one key gets added to your
             keyboard.
           </b>
+          <p className="text-4xl">
+            Your goal is to complete each virtual keyboard with your keys and
+            unlock each of the 3 keyboard tiers! (60%, 75%, 100%)
+          </p>
         </div>
         <p className="text-md">
           Keycap model credits:{" "}
@@ -298,36 +322,12 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
-        <div className="flex flex-col gap-4">
-          <b className="text-4xl">
-            Ship one project, get a Hack Club themed custom keycap for free!
-          </b>
-          <p className="text-3xl">
-            Then show it off on your virtual keyboard! (Designs not final.)
-          </p>
-        </div>
-        <div className="flex gap-[5%]">
-          {KeycapTypes.slice(1).map((k, i) => (
-            <motion.img
-              src={k}
-              className="aspect-square w-1/6"
-              initial={{ x: -40, opacity: 0, rotate: 0 }}
-              whileInView={{
-                x: 0,
-                opacity: 1,
-                rotate: (i % 2 === 0 ? -1 : 1) * 12,
-              }}
-              transition={{ type: "spring", delay: i * 0.1 }}
-            />
-          ))}
-        </div>
-      </div>
+
       <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Collect all 61 keys, and get this 60% keyboard IRL, AND a wrist
-            rest, AND 3 total custom keys.
+            Complete your 60% virtual keyboard with 61 keys, and get a 60%
+            keyboard IRL, AND a wrist rest, AND 3 total custom keys.
           </b>
           <p className="text-2xl">
             ROYAL KLUDGE R65 or similar 60-65% keyboard. That means 16 hours of
@@ -353,45 +353,49 @@ function App() {
       <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Or, get 84 keys, and get this 75% keyboard, AND a Logitech desk pad,
-            and 5 total custom keys.
+            Complete a 75% virtual keyboard with 84 keys, and get a 75%
+            keyboard, AND a Hack Club-themed mouse pad, and 5 total custom keys.
           </b>
           <p className="text-2xl">
-            EPOMAKER X Aula F75 MAX or similar 75%-TKL keyboard, and a Logitech
-            desk pad. That means 21 hours of coding!
+            EPOMAKER X Aula F75 MAX or similar 75%-TKL keyboard and exclusive
+            Hack Club mouse pad. That means 21 hours of coding!
           </p>
         </div>
-        <div className="relative">
-          <motion.div
-            className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 md:flex flex-col items-center justify-center -rotate-20 hidden"
-            initial={{ opacity: 0, scale: 2 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", duration: 0.7, delay: 0.25 }}
-          >
-            <div className="rounded-full border-4 border-orange-900 bg-orange-50 p-4 text-5xl font-extrabold">
-              84
-            </div>
-            <p className="text-3xl">keys</p>
-          </motion.div>
+        <div className="flex flex-row gap-6 items-center w-2/3">
+          <div className="relative min-w-0 flex-2 object-contain">
+            <img src={f75} className="" />
+            <motion.div
+              className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 md:flex flex-col items-center justify-center -rotate-20 hidden"
+              initial={{ opacity: 0, scale: 2 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", duration: 0.7, delay: 0.25 }}
+            >
+              <div className="rounded-full border-4 border-orange-900 bg-orange-50 p-4 text-5xl font-extrabold">
+                84
+              </div>
+              <p className="text-3xl">keys</p>
+            </motion.div>
+          </div>
           <img
-            src={f75}
-            className="absolute top-1/2 left-1/2 -translate-1/2 z-2 w-3/4"
+            src={customPadS}
+            className="rounded-md shadow-gray-500 shadow-md flex-1 min-w-0 object-contain"
           />
-          <img src={logiPad} width={720} />
         </div>
       </div>
       <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Or, get 104 keys, and get up to a full-size keyboard, AND a gaming
-            mouse, AND 7 total custom keys.
+            Or, complete a 100% virtual keyboard with 104 keys, and get up to a
+            full-size keyboard, AND a full size Hack Club-themed desk pad, and 7
+            total custom keys!
           </b>
           <p className="text-2xl">
-            ROYAL KLUDGE S98, or similar 96%-100% keyboard, and Razer DeathAdder
-            Essential or similar mouse. That means 26 hours of coding!
+            ROYAL KLUDGE S98, or similar 96%-100% keyboard, and a bigger version
+            of the exclusive desk pad above! That means 26 hours of coding!
           </p>
         </div>
-        <div className="relative flex flex-row gap-4 items-center w-2/3">
+
+        <div className="relative flex flex-col gap-4 items-center">
           <motion.div
             className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 md:flex flex-col items-center justify-center -rotate-20 hidden"
             initial={{ opacity: 0, scale: 2 }}
@@ -403,18 +407,29 @@ function App() {
             </div>
             <p className="text-3xl">keys</p>
           </motion.div>
-          <img src={s98} className="w-5/6" />
-          <img src={da} className="w-1/6" />
+
+          <img
+            src={s98}
+            className="absolute top-1/2 left-1/2 -translate-1/2 z-2 w-2/3"
+          />
+          <img
+            src={customPadM}
+            width={720}
+            className="rounded-md shadow-gray-500 shadow-md"
+          />
         </div>
+
         <p className="text-xl">
-          Want something else? We'll have a selection of keyboards at each level
-          to select from.
+          Want something else or a different mix of items? We'll have a
+          selection of keyboard kits at each level to select from. Each tier
+          will have their own respective keyboard and accessory like you saw
+          above!
         </p>
       </div>
       <div className="flex flex-col gap-8 md:px-24 px-12 py-24">
-        <div className="flex flex-row gap-12 relative">
+        <div className="flex flex-row gap-12 relative items-stretch">
           <motion.div
-            className="rounded p-4 text-4xl shadow-md shadow-gray-500 lg:w-1/2 w-full bg-cover"
+            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-full bg-cover"
             style={{ backgroundImage: `url(${paper})` }}
             initial={{ x: -24, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -423,30 +438,34 @@ function App() {
             <b>First, sign up!</b>
             <p>Any teen 13-18 can start building keyboard-related projects.</p>
           </motion.div>
+          <img src={signUp} className="max-h-48 h-full" />
         </div>
-        <div className="flex flex-row gap-12 relative">
+        <div className="h">
           <motion.div
-            className="rounded p-4 shadow-md shadow-gray-500 lg:w-1/2 w-full bg-cover flex flex-col gap-2"
+            className="rounded p-4 shadow-md shadow-gray-500 w-full bg-cover flex flex-row gap-12 relative items-stretch"
             style={{ backgroundImage: `url(${paper})` }}
             initial={{ x: 24, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.25 }}
           >
-            <b className="text-4xl">
-              Next, customize your own virtual keyboard.
-            </b>
-            <p className="text-4xl">
-              Add colors, deskpads, patterns, and anything you want! If you
-              claimed custom keycaps, you can add them here!
-            </p>
-            <p className="text-2xl">
-              You’ll also be able to see other people’s keyboards.
-            </p>
+            <img src={customize} className="min-w-0 object-contain w-20" />
+            <div className="flex flex-col gap-2">
+              <b className="text-4xl">
+                Next, customize your own virtual keyboard.
+              </b>
+              <p className="text-4xl">
+                Add colors, deskpads, patterns, and anything you want! If you
+                claimed custom keycaps, you can add them here!
+              </p>
+              <p className="text-2xl">
+                You’ll also be able to see other people’s keyboards.
+              </p>
+            </div>
           </motion.div>
         </div>
-        <div className="flex flex-row gap-12 relative">
+        <div className="flex flex-row gap-12 relative items-stretch">
           <motion.div
-            className="rounded p-4 text-4xl shadow-md shadow-gray-500 lg:w-1/2 w-full bg-cover"
+            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-full bg-cover"
             style={{ backgroundImage: `url(${paper})` }}
             initial={{ x: -24, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -465,6 +484,7 @@ function App() {
               .
             </p>
           </motion.div>
+          <img src={create} className="h-full object-cover  max-h-48" />
         </div>
       </div>
       <div className="flex flex-col gap-4 md:px-24 px-12 py-18">
@@ -515,7 +535,93 @@ function App() {
           <p>Nope! This is just to gauge interest within the community.</p>
         </Collapsible>
       </div>
-      <div className="p-16 bg-black flex flex-row gap-4 text-white items-start">
+      <div className="flex flex-col gap-4 md:px-24 px-12 py-18">
+        <div>
+          <h2 className="text-4xl font-bold">FAQ for organizers!</h2>
+          <p className="text-xl">
+            For those interested in adopting this event in Hack Club!
+          </p>
+        </div>
+        <Collapsible title="What's the 'YS' part of this event?">
+          <p>
+            This is designed to be a keyboard-themed YSWS where you can ship any
+            keyboard related project. This way, you can make many projects with
+            fewer hours to work up towards a goal, or make one project with many
+            hours. I chose this flexibility as I found in my personal experience
+            doing YSWS events, that it got tiring doing 1 singular project for
+            many hours.
+          </p>
+        </Collapsible>
+        <Collapsible title="How is this different from other YSWS?">
+          <p>
+            I wanted to be unique from any other YSWS in its approach to
+            shipping projects.
+          </p>
+          <p>
+            I didn’t want to just make a standard YSWS where you do X and get Y.
+            Keebstagram is designed so that there is a community aspect of
+            customizing your keyboard and sharing projects. Additionally, you
+            are highly incentivized to spend more time on projects instead of
+            creating smaller, less time-consuming projects.
+          </p>
+          <p>
+            There’s also exclusive Hack Club merch specifically for keyboards!
+          </p>
+        </Collapsible>
+        <Collapsible title="How does the shop work?">
+          <p>There are 3 tiers: 61-keys, 84-keys, and 104-keys.</p>
+          <p>
+            Once you complete your virtual keyboard for each tier, that tier
+            unlocks in the shop.
+          </p>
+          <p>
+            You can select the base combination of items for that tier (which is
+            listed on this homepage), or you can choose an alternate set of
+            items if you cannot get that base combination.
+          </p>
+          <p>
+            Once you purchase items from a tier, that amount of keys from the
+            tier is deducted from your key balance.
+          </p>
+        </Collapsible>
+        <Collapsible title="Why the 3 tiers of keyboards?">
+          <p>
+            The 61, 84, and 104 key structure works well because once you
+            complete your virtual keyboard (which everyone sees, further
+            incentivizing the deal), you get that form factor of keyboard in
+            real life and the accessories that come with it. The virtual
+            keyboard acts as a visual aid for what people should aim for.
+            Additionally, since you can’t find the exclusive merch anywhere
+            else, people are incentivized to work towards getting this merch AND
+            the mechanical keyboard, sweetening the deal.
+          </p>
+          <p>
+            This actually does works out financially, especially when accounting
+            for different keyboards if needed - see the below sections.
+          </p>
+        </Collapsible>
+        <Collapsible title="If others want different keyboards, how will I account for that with the tier-based system?">
+          <p>
+            There will be alternative keyboards + accessory sets as listed on
+            the page. Once users complete each tier, they will be able to select
+            the keyboard kit they want of that form factor. These item combos
+            will account for the maximum grant given for that tier and will
+            include *up to* items that are in the base combo as listed on the
+            home page.
+          </p>
+          <p>
+            For example, for the third, 104-key tier, you might be able to get a
+            Keychron K10 Max and 7 custom keycaps ($120 + $7 {"<"} $130).
+          </p>
+          <p>
+            You will not be able to purchase higher-tiered exclusive items from
+            lower tiers. For example, you cannot get the full-size desk pad from
+            the 75% keeb tier.
+          </p>
+          <p>The shop will detail the possible combinations for each tier.</p>
+        </Collapsible>
+      </div>
+      <div className="p-16 bg-black flex flex-row gap-4 text-white items-start relative">
         <img src={hcFlag} width={128} />
         <div className="flex flex-col gap-8">
           <div>
@@ -533,6 +639,13 @@ function App() {
               This event is not affiliated or endorsed by any of the keyboard
               companies mentioned above.
             </p>
+            <p className="text-md">
+              Dino imagery from{" "}
+              <a href="https://rawr.hackclub.com" className="underline">
+                rawr.hackclub.com
+              </a>{" "}
+              :3
+            </p>
           </div>
           <div>
             <p>
@@ -549,6 +662,11 @@ function App() {
               Need to get in touch? Check out the #keebstagram-ysws channel!
             </p>
           </div>
+          <img
+            src={dinoTired}
+            width={128}
+            className="absolute bottom-0 right-12"
+          />
         </div>
       </div>
     </div>

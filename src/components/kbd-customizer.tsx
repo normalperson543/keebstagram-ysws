@@ -96,7 +96,7 @@ function KbdCustomizer({ claimedCustomKeycaps }: {claimedCustomKeycaps: number})
         <img
           src={Blank60KeyboardTypes[blankKeebType]}
           onClick={(e) => handleChangeKeyboard(e)}
-          className="aspect-1925/638"
+          className="aspect-1925/638 w-full max-w-180"
         />
         {keycaps.map((k) => (
           <motion.img
