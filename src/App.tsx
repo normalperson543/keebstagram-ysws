@@ -552,22 +552,6 @@ function App() {
             many hours.
           </p>
         </Collapsible>
-        <Collapsible title="How is this different from other YSWS?">
-          <p>
-            I wanted to be unique from any other YSWS in its approach to
-            shipping projects.
-          </p>
-          <p>
-            I didn’t want to just make a standard YSWS where you do X and get Y.
-            Keebstagram is designed so that there is a community aspect of
-            customizing your keyboard and sharing projects. Additionally, you
-            are highly incentivized to spend more time on projects instead of
-            creating smaller, less time-consuming projects.
-          </p>
-          <p>
-            There’s also exclusive Hack Club merch specifically for keyboards!
-          </p>
-        </Collapsible>
         <Collapsible title="How does the shop work?">
           <p>There are 3 tiers: 61-keys, 84-keys, and 104-keys.</p>
           <p>
