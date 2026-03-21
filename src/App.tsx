@@ -160,7 +160,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-12 md:p-24 p-12">
+      <div className="flex flex-col lg:flex-row gap-12 md:p-24 p-12 items-center">
         <div className="w-full lg:w-1/2 flex flex-col gap-6 text-3xl">
           <p>
             <b>mechanical keyboards are cool!</b> they can sound really creamy,
@@ -177,7 +177,13 @@ function App() {
             and, you'll meet a lot of cool hackclubbers when you're at it too.
           </p>
         </div>
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
+        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-6">
+          <video
+            src="https://user-cdn.hackclub-assets.com/019d0e5b-33b2-7752-bcd4-ed4aa632b0b1/keyboard%20rainy75%20test%20cutdown.mp4"
+            controls
+            className="rounded-md"
+          />
+          <p>^ sound test :D ^</p>
           <p>
             fun fact: i got my mechanical keyboard (rainy75) for free from hack
             club!
