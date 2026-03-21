@@ -55,7 +55,7 @@ function App() {
           </div>
           <div className="flex flex-col gap-8">
             <p className="text-4xl">
-              making keyboard-related projects,{" "}
+              make keyboard-related projects,{" "}
               <b>build your own virtual keyboard</b>, and share your creations!
             </p>
             <p className="text-4xl">
@@ -276,7 +276,7 @@ function App() {
             keyboard.
           </b>
           <p className="text-4xl">
-            Your goal is to complete each virtual keyboard with your keys and
+            Your goal is to complete your virtual keyboard with your keys and
             unlock each of the 3 keyboard tiers! (60%, 75%, 100%)
           </p>
         </div>
@@ -420,36 +420,38 @@ function App() {
         </div>
 
         <p className="text-xl">
-          Want something else or a different mix of items? We'll have a
-          selection of keyboard kits at each level to select from. Each tier
-          will have their own respective keyboard and accessory like you saw
-          above!
+          Want a different keyboard? We'll have alternate keyboard combos
+          avaliable in the shop!
         </p>
       </div>
       <div className="flex flex-col gap-8 md:px-24 px-12 py-24">
         <div className="flex flex-row gap-12 relative items-stretch">
           <motion.div
-            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-full bg-cover"
+            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-full bg-cover flex flex-row gap-12 relative items-center"
             style={{ backgroundImage: `url(${paper})` }}
             initial={{ x: -24, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <b>First, sign up!</b>
-            <p>Any teen 13-18 can start building keyboard-related projects.</p>
+            <div className="flex flex-col gap-2 flex-1">
+              <b>First, sign up!</b>
+              <p>
+                Any teen 13-18 can start building keyboard-related projects.
+              </p>
+            </div>
+            <img src={signUp} className="max-h-48 h-full" />
           </motion.div>
-          <img src={signUp} className="max-h-48 h-full" />
         </div>
         <div className="h">
           <motion.div
-            className="rounded p-4 shadow-md shadow-gray-500 w-full bg-cover flex flex-row gap-12 relative items-stretch"
+            className="rounded p-4 shadow-md shadow-gray-500 w-full bg-cover flex flex-row gap-12 relative items-center"
             style={{ backgroundImage: `url(${paper})` }}
             initial={{ x: 24, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.25 }}
           >
-            <img src={customize} className="min-w-0 object-contain w-20" />
-            <div className="flex flex-col gap-2">
+            <img src={customize} className="min-w-0 object-contain w-100" />
+            <div className="flex flex-col gap-2 flex-1">
               <b className="text-4xl">
                 Next, customize your own virtual keyboard.
               </b>
@@ -465,26 +467,28 @@ function App() {
         </div>
         <div className="flex flex-row gap-12 relative items-stretch">
           <motion.div
-            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-full bg-cover"
+            className="rounded p-4 text-4xl shadow-md shadow-gray-500 w-full bg-cover flex flex-row gap-12 relative items-center"
             style={{ backgroundImage: `url(${paper})` }}
             initial={{ x: -24, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <b>Start building!</b>
-            <p>
-              Build any keyboard related project you want! You'll log your hours
-              using{" "}
-              <a
-                href="https://hackatime.hackclub.com"
-                className="font-bold underline"
-              >
-                Hackatime
-              </a>
-              .
-            </p>
+            <div className="flex flex-col gap-2 flex-1">
+              <b>Start building!</b>
+              <p>
+                Build any keyboard related project you want! You'll log your
+                hours using{" "}
+                <a
+                  href="https://hackatime.hackclub.com"
+                  className="font-bold underline"
+                >
+                  Hackatime
+                </a>
+                .
+              </p>
+            </div>
+            <img src={create} className="h-full object-cover  max-h-48" />
           </motion.div>
-          <img src={create} className="h-full object-cover  max-h-48" />
         </div>
       </div>
       <div className="flex flex-col gap-4 md:px-24 px-12 py-18">
@@ -559,9 +563,9 @@ function App() {
             unlocks in the shop.
           </p>
           <p>
-            You can select the base combination of items for that tier (which is
-            listed on this homepage), or you can choose an alternate set of
-            items if you cannot get that base combination.
+            You can select the standard combination of items for that tier
+            (which is listed on this homepage), or you can choose an alternate
+            keyboard.
           </p>
           <p>
             Once you purchase items from a tier, that amount of keys from the
@@ -570,39 +574,22 @@ function App() {
         </Collapsible>
         <Collapsible title="Why the 3 tiers of keyboards?">
           <p>
-            The 61, 84, and 104 key structure works well because once you
+            The 61, 84, and 104 key structure makes sense because once you
             complete your virtual keyboard (which everyone sees, further
             incentivizing the deal), you get that form factor of keyboard in
-            real life and the accessories that come with it. The virtual
+            real life - and the accessories that come with it. The virtual
             keyboard acts as a visual aid for what people should aim for.
-            Additionally, since you can’t find the exclusive merch anywhere
-            else, people are incentivized to work towards getting this merch AND
-            the mechanical keyboard, sweetening the deal.
-          </p>
-          <p>
-            This actually does works out financially, especially when accounting
-            for different keyboards if needed - see the below sections.
+            Additionally, since there's exclusive merch at each tier you
+            advance, you're encouraged to spend more time making projects to get
+            that merch as well!
           </p>
         </Collapsible>
-        <Collapsible title="If others want different keyboards, how will I account for that with the tier-based system?">
+        <Collapsible title="Will participants be able to choose a different keyboard?">
           <p>
-            There will be alternative keyboards + accessory sets as listed on
-            the page. Once users complete each tier, they will be able to select
-            the keyboard kit they want of that form factor. These item combos
-            will account for the maximum grant given for that tier and will
-            include *up to* items that are in the base combo as listed on the
-            home page.
+            There will be alternative keyboards as listed on the page. Once
+            users complete each tier, they will be able to select the keyboards
+            they want of that form factor.
           </p>
-          <p>
-            For example, for the third, 104-key tier, you might be able to get a
-            Keychron K10 Max and 7 custom keycaps ($120 + $7 {"<"} $130).
-          </p>
-          <p>
-            You will not be able to purchase higher-tiered exclusive items from
-            lower tiers. For example, you cannot get the full-size desk pad from
-            the 75% keeb tier.
-          </p>
-          <p>The shop will detail the possible combinations for each tier.</p>
         </Collapsible>
       </div>
       <div className="p-16 bg-black flex flex-row gap-4 text-white items-start relative">
