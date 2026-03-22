@@ -12,13 +12,18 @@ import { motion } from "motion/react";
 import Collapsible from "./components/collapsible";
 import dinoWant from "./assets/dinos/dino-want-modified.png";
 import { useNavigate } from "react-router";
-import { CircleArrowDownIcon, CircleQuestionMarkIcon } from "lucide-react";
+import {
+  ArrowRightIcon,
+  CircleArrowDownIcon,
+  CircleQuestionMarkIcon,
+} from "lucide-react";
 import { KeycapTypes } from "./lib/constants";
 import KbdCustomizer from "./components/kbd-customizer";
 import dinoTired from "./assets/dinos/tired-dino.png";
 import create from "./assets/drawings/create.png";
 import customize from "./assets/drawings/customize.png";
 import signUp from "./assets/drawings/sign-up.png";
+import { Link } from "react-router";
 function App() {
   const nav = useNavigate();
   return (
@@ -72,22 +77,26 @@ function App() {
             className="border border-orange-900 bg-orange-100 p-4 text-4xl hover:scale-102 w-full duration-200"
             placeholder="enter your email (teens 13-18)"
           />
-          <div className="flex flex-col gap-4 w-full md:flex-row">
-            <button
-              className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative text-start"
-              onClick={() => nav("/app/profile")}
+          <div className="flex flex-col gap-4 w-full md:flex-row items-stretch">
+            <a
+              href="https://forms.fillout.com/t/bxin5RUWWhus"
+              className="flex-1"
             >
-              preview platform!
-              <img
-                src={dinoWant}
-                className="absolute right-4 bottom-0"
-                width={84}
-              />
-            </button>
-            <button className="border border-orange-900 bg-orange-100 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative flex items-center justify-between">
-              how it works
-              <CircleQuestionMarkIcon width={48} height={48} />
-            </button>
+              <button className="border border-orange-900 bg-orange-200 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 duration-200 relative text-start w-full h-full">
+                rsvp now :3
+                <img
+                  src={dinoWant}
+                  className="absolute right-4 bottom-0"
+                  width={84}
+                />
+              </button>
+            </a>
+            <Link to="/app/profile" className="flex-1">
+              <button className="border border-orange-900 bg-orange-100 p-4 text-4xl cursor-pointer hover:scale-102 hover:rotate-1 flex-1 duration-200 relative flex items-center justify-between w-full h-full">
+                preview platform!
+                <ArrowRightIcon width={48} height={48} />
+              </button>
+            </Link>
           </div>
           <div className="flex flex-col gap-2 items-center text-center">
             <div className="flex gap-2 animate-bounce items-center">
@@ -163,8 +172,8 @@ function App() {
       <div className="flex flex-col lg:flex-row gap-12 md:p-24 p-12 items-center">
         <div className="w-full lg:w-1/2 flex flex-col gap-6 text-3xl">
           <p>
-            <b>mechanical keyboards are cool!</b> they can sound really creamy,
-            they look good on your desk, and you can customize them!
+            mechanical keyboards are cool! they can sound really creamy, they
+            look good on your desk, and they're really customziable!
           </p>
           <p>
             now you can get your own, <b>for free.</b>
@@ -178,16 +187,8 @@ function App() {
           </p>
         </div>
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-6">
-          <video
-            src="https://user-cdn.hackclub-assets.com/019d0e5b-33b2-7752-bcd4-ed4aa632b0b1/keyboard%20rainy75%20test%20cutdown.mp4"
-            controls
-            className="rounded-md"
-          />
-          <p>^ sound test :D ^</p>
-          <p>
-            fun fact: i got my mechanical keyboard (rainy75) for free from hack
-            club!
-          </p>
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OZOSwy6sghk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p className="text-xl font-bold">Watch the video to learn more!</p>
         </div>
       </div>
       <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
@@ -539,28 +540,16 @@ function App() {
           </p>
         </Collapsible>
         <Collapsible title="How can I track time?">
-          <p>You'll use Hackatime to track project time.</p>
+          <p>
+            You'll use{" "}
+            <a href="https://hackatime.hackclub.com" className="underline">
+              Hackatime
+            </a>{" "}
+            to track project time.
+          </p>
         </Collapsible>
         <Collapsible title="Do I have to be committed to this event when I RSVP?">
           <p>Nope! This is just to gauge interest within the community.</p>
-        </Collapsible>
-      </div>
-      <div className="flex flex-col gap-4 md:px-24 px-12 py-18">
-        <div>
-          <h2 className="text-4xl font-bold">FAQ for organizers!</h2>
-          <p className="text-xl">
-            For those interested in adopting this event in Hack Club!
-          </p>
-        </div>
-        <Collapsible title="What's the 'YS' part of this event?">
-          <p>
-            This is designed to be a keyboard-themed YSWS where you can ship any
-            keyboard related project. This way, you can make many projects with
-            fewer hours to work up towards a goal, or make one project with many
-            hours. I chose this flexibility as I found in my personal experience
-            doing YSWS events, that it got tiring doing 1 singular project for
-            many hours.
-          </p>
         </Collapsible>
         <Collapsible title="How does the shop work?">
           <p>There are 3 tiers: 61-keys, 84-keys, and 104-keys.</p>
@@ -578,6 +567,32 @@ function App() {
             tier is deducted from your key balance.
           </p>
         </Collapsible>
+        <Collapsible title="Can I choose a different keyboard?">
+          <p>
+            Yes! There will be alternative keyboards as listed on the shop. Once
+            you complete each of the 3 tiers, you'll be able to select the
+            keyboards you want of that form factor.
+          </p>
+        </Collapsible>
+      </div>
+      <div className="flex flex-col gap-4 md:px-24 px-12 py-18">
+        <div>
+          <h2 className="text-4xl font-bold">FAQ for HQ!</h2>
+          <p className="text-xl">
+            For those interested in adopting this event in Hack Club!
+          </p>
+        </div>
+        <Collapsible title="What's the 'YS' part of this event?">
+          <p>
+            This is designed to be a keyboard-themed YSWS where you can ship any
+            keyboard related project. This way, you can make many projects with
+            fewer hours to work up towards a goal, or make one project with many
+            hours. I chose this flexibility as I found in my personal experience
+            doing YSWS events, that it got tiring doing 1 singular project for
+            many hours.
+          </p>
+        </Collapsible>
+
         <Collapsible title="Why the 3 tiers of keyboards?">
           <p>
             The 61, 84, and 104 key structure makes sense because once you
@@ -588,13 +603,6 @@ function App() {
             Additionally, since there's exclusive merch at each tier you
             advance, you're encouraged to spend more time making projects to get
             that merch as well!
-          </p>
-        </Collapsible>
-        <Collapsible title="Will participants be able to choose a different keyboard?">
-          <p>
-            There will be alternative keyboards as listed on the shop. Once
-            users complete each tier, they will be able to select the keyboards
-            they want of that form factor.
           </p>
         </Collapsible>
       </div>
