@@ -11,7 +11,6 @@ import hcFlag from "./assets/flag-standalone-wtransparent.svg";
 import { motion } from "motion/react";
 import Collapsible from "./components/collapsible";
 import dinoWant from "./assets/dinos/dino-want-modified.png";
-import { useNavigate } from "react-router";
 import {
   ArrowRightIcon,
   CircleArrowDownIcon,
