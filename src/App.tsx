@@ -54,7 +54,7 @@ function App() {
           </div>
           <div className="flex flex-col gap-8">
             <p className="text-4xl">
-              making keyboard-related projects,
+              make keyboard-related projects,
             </p>
             <p className="text-4xl">
               get <b>exclusive hack club keycaps and deskpads,</b>
