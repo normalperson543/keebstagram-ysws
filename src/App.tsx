@@ -11,10 +11,7 @@ import hcFlag from "./assets/flag-standalone-wtransparent.svg";
 import { motion } from "motion/react";
 import Collapsible from "./components/collapsible";
 import dinoWant from "./assets/dinos/dino-want-modified.png";
-import {
-  ArrowRightIcon,
-  CircleArrowDownIcon,
-} from "lucide-react";
+import { ArrowRightIcon, CircleArrowDownIcon } from "lucide-react";
 import { KeycapTypes } from "./lib/constants";
 import KbdCustomizer from "./components/kbd-customizer";
 import dinoTired from "./assets/dinos/tired-dino.png";
@@ -184,7 +181,13 @@ function App() {
           </p>
         </div>
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-6">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OZOSwy6sghk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/OZOSwy6sghk"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
           <p className="text-xl font-bold">Watch the video to learn more!</p>
         </div>
       </div>
@@ -389,8 +392,8 @@ function App() {
       <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Or, complete a 100% virtual keyboard with 104 keys, and get up to a
-            full-size keyboard, AND a full size Hack Club-themed desk pad, and 7
+            Or, complete a 100% virtual keyboard with 104 keys, and get a
+            96-100% keyboard, AND a full size Hack Club-themed desk pad, and 7
             total custom keys!
           </b>
           <p className="text-2xl">
@@ -460,8 +463,8 @@ function App() {
                 Next, customize your own virtual keyboard.
               </b>
               <p className="text-4xl">
-                Add colors, deskpads, patterns, and anything you want! If you
-                claimed custom keycaps, you can add them here!
+                Add fun colors and deskpads! If you claimed custom keycaps, you
+                can add them here!
               </p>
               <p className="text-2xl">
                 You’ll also be able to see other people’s keyboards.
