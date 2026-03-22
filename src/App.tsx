@@ -15,7 +15,6 @@ import { useNavigate } from "react-router";
 import {
   ArrowRightIcon,
   CircleArrowDownIcon,
-  CircleQuestionMarkIcon,
 } from "lucide-react";
 import { KeycapTypes } from "./lib/constants";
 import KbdCustomizer from "./components/kbd-customizer";
@@ -25,7 +24,6 @@ import customize from "./assets/drawings/customize.png";
 import signUp from "./assets/drawings/sign-up.png";
 import { Link } from "react-router";
 function App() {
-  const nav = useNavigate();
   return (
     <div className="w-full flex flex-col gap-2">
       <div
@@ -187,7 +185,7 @@ function App() {
           </p>
         </div>
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-6">
-          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OZOSwy6sghk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OZOSwy6sghk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
           <p className="text-xl font-bold">Watch the video to learn more!</p>
         </div>
       </div>
