@@ -54,8 +54,7 @@ function App() {
           </div>
           <div className="flex flex-col gap-8">
             <p className="text-4xl">
-              make keyboard-related projects and{" "}
-              <b>build your own virtual keyboard</b>!
+              making keyboard-related projects,
             </p>
             <p className="text-4xl">
               get <b>exclusive hack club keycaps and deskpads,</b>
@@ -642,9 +641,6 @@ function App() {
               >
                 Open source.
               </a>
-            </p>
-            <p>
-              Need to get in touch? Check out the #keebstagram-ysws channel!
             </p>
           </div>
           <img
