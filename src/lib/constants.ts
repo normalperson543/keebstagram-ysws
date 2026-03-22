@@ -13,4 +13,4 @@ export const Blank60KeyboardTypes = [
   "/assets/blank-keebs/60/blue.png",
   "/assets/blank-keebs/60/pink.png",
 ];
-export const DeskpadTypes = ["", "/assets/desk-pads/rawr.jpg"];
+export const DeskpadTypes = ["", "/assets/desk-pads/rawr.jpg", "/assets/desk-pads/ksg-custom-m.png"];

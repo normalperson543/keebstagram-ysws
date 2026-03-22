@@ -3,8 +3,8 @@ import { Blank60KeyboardTypes, DeskpadTypes, KeycapTypes } from "../lib/constant
 import { useState } from "react";
 
 function KbdCustomizer({ claimedCustomKeycaps }: {claimedCustomKeycaps: number}) {
-  const [blankKeebType, setBlankKeebType] = useState(1);
-  const [deskpadType, setDeskpadType] = useState(1);
+  const [blankKeebType, setBlankKeebType] = useState(2);
+  const [deskpadType, setDeskpadType] = useState(2);
   const [keycaps, setKeycaps] = useState([
     {
       id: 0,

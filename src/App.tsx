@@ -55,8 +55,8 @@ function App() {
           </div>
           <div className="flex flex-col gap-8">
             <p className="text-4xl">
-              make keyboard-related projects,{" "}
-              <b>build your own virtual keyboard</b>, and share your creations!
+              make keyboard-related projects and{" "}
+              <b>build your own virtual keyboard</b>!
             </p>
             <p className="text-4xl">
               get <b>exclusive hack club keycaps and deskpads,</b>
@@ -227,8 +227,8 @@ function App() {
       <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Customize your virtual keyboard. Add fun colors, custom keycaps,
-            desk pads, wrist rests...
+            Customize your virtual keyboard. Add fun colors, keycaps, desk
+            pads...
           </b>
           <p className="text-3xl">
             And share it with the community. You&apos;ll be able to see other
@@ -259,7 +259,7 @@ function App() {
             shared project!
           </p>
         </div>
-        <div className="flex gap-[5%]">
+        <div className="flex gap-[5%] w-2/3">
           {KeycapTypes.slice(1).map((k, i) => (
             <motion.img
               src={k}
@@ -426,8 +426,8 @@ function App() {
         </div>
 
         <p className="text-xl">
-          Want a different keyboard? We'll have alternate keyboard combos
-          avaliable in the shop!
+          Want a different keyboard? We'll have alternate keyboards avaliable in
+          the shop!
         </p>
       </div>
       <div className="flex flex-col gap-8 md:px-24 px-12 py-24">
@@ -592,7 +592,7 @@ function App() {
         </Collapsible>
         <Collapsible title="Will participants be able to choose a different keyboard?">
           <p>
-            There will be alternative keyboards as listed on the page. Once
+            There will be alternative keyboards as listed on the shop. Once
             users complete each tier, they will be able to select the keyboards
             they want of that form factor.
           </p>
