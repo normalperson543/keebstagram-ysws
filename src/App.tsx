@@ -170,7 +170,7 @@ function App() {
         <div className="w-full lg:w-1/2 flex flex-col gap-6 text-3xl">
           <p>
             mechanical keyboards are cool! they can sound really creamy, they
-            look good on your desk, and they're really customziable!
+            look good on your desk, and they're really customizable!
           </p>
           <p>
             now you can get your own, <b>for free.</b>
