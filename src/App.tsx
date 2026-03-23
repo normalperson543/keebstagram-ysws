@@ -212,6 +212,9 @@ function App() {
         <div className="flex flex-col gap-6">
           <b className="text-4xl">Well, how do I get one?</b>
           <p className="text-4xl">You start with a 60% virtual keyboard.</p>
+          <p className="text-xl">
+            Soon, it'll become a real mechanical keyboard.
+          </p>
           <p className="text-md">
             keeb model credits:{" "}
             <a
@@ -297,7 +300,7 @@ function App() {
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
             Every 15 minutes you make something, one key gets added to your
-            keyboard.
+            virtual keyboard.
           </b>
           <p className="text-4xl">
             Your goal is to complete your virtual keyboard with your keys and
@@ -351,7 +354,7 @@ function App() {
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
             Complete your 60% virtual keyboard with 61 keys, and get a 60%
-            keyboard IRL, AND a wrist rest, AND 3 total custom keys.
+            mechanical keyboard IRL, AND a wrist rest, AND 3 total custom keys.
           </b>
           <p className="text-2xl">
             ROYAL KLUDGE R65 or similar 60-65% keyboard. That means 16 hours of
@@ -378,7 +381,8 @@ function App() {
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
             Complete a 75% virtual keyboard with 84 keys, and get a 75%
-            keyboard, AND a Hack Club-themed mouse pad, and 5 total custom keys.
+            mechanical keyboard, AND a Hack Club-themed mouse pad, and 5 total
+            custom keys.
           </b>
           <p className="text-2xl">
             EPOMAKER X Aula F75 MAX or similar 75%-TKL keyboard and exclusive
@@ -410,8 +414,8 @@ function App() {
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
             Or, complete a 100% virtual keyboard with 104 keys, and get a
-            96-100% keyboard, AND a full size Hack Club-themed desk pad, and 7
-            total custom keys!
+            96-100% mechanical keyboard, AND a full size Hack Club-themed desk
+            pad, and 7 total custom keys!
           </b>
           <p className="text-2xl">
             ROYAL KLUDGE S98, or similar 96%-100% keyboard, and a bigger version
