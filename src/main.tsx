@@ -4,22 +4,25 @@ import "./index.css";
 import App from "./App.tsx";
 import { BrowserRouter, Route, Routes } from "react-router";
 import ProfileUI from "./app/profile/Profile.tsx";
-import { init } from "@plausible-analytics/tracker";
+import { PostHogProvider } from "@posthog/react";
 
-if (import.meta.env.VITE_PLAUSIBLE_URL && import.meta.env.VITE_SITE_URL) {
-  init({
-    domain: import.meta.env.VITE_SITE_URL,
-    endpoint: `https://${import.meta.env.VITE_PLAUSIBLE_URL}/api/event`,
-  });
-}
+const options = {
+  api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+  defaults: "2026-01-30",
+} as const;
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/app/profile" element={<ProfileUI />} />
-      </Routes>
-    </BrowserRouter>
+    <PostHogProvider
+      apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY}
+      options={options}
+    >
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/app/profile" element={<ProfileUI />} />
+        </Routes>
+      </BrowserRouter>
+    </PostHogProvider>
   </StrictMode>,
 );
