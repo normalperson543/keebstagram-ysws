@@ -276,8 +276,8 @@ function App() {
             shipped to you for free!
           </b>
           <p className="text-3xl">
-            Then show it off on your virtual keyboard! Everyone gets to see your
-            shared project!
+            Then show it off online on your virtual keyboard! Everyone gets to
+            see your shared project!
           </p>
         </div>
         <div className="flex gap-[5%] w-2/3">
@@ -353,8 +353,11 @@ function App() {
       <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Complete your 60% virtual keyboard with 61 keys, and get a 60%
-            mechanical keyboard IRL, AND a wrist rest, AND 3 total custom keys.
+            Complete your 60% virtual keyboard with 61 keys,
+          </b>
+          <b className="text-4xl">
+            Get a 60% mechanical keyboard IRL, AND a wrist rest, AND 3 total
+            custom keys.
           </b>
           <p className="text-2xl">
             ROYAL KLUDGE R65 or similar 60-65% keyboard. That means 16 hours of
@@ -380,9 +383,11 @@ function App() {
       <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Complete a 75% virtual keyboard with 84 keys, and get a 75%
-            mechanical keyboard, AND a Hack Club-themed mouse pad, and 5 total
-            custom keys.
+            Complete a 75% virtual keyboard with 84 keys,
+          </b>
+          <b className="text-4xl">
+            Get a 75% mechanical keyboard, AND a Hack Club-themed mouse pad, and
+            5 total custom keys.
           </b>
           <p className="text-2xl">
             EPOMAKER X Aula F75 MAX or similar 75%-TKL keyboard and exclusive
@@ -413,9 +418,11 @@ function App() {
       <div className="flex flex-col gap-12 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Or, complete a 100% virtual keyboard with 104 keys, and get a
-            96-100% mechanical keyboard, AND a full size Hack Club-themed desk
-            pad, and 7 total custom keys!
+            Or, complete a 100% virtual keyboard with 104 keys,
+          </b>
+          <b className="text-4xl">
+            Get a 96-100% mechanical keyboard, AND a full size Hack Club-themed
+            desk pad, and 7 total custom keys!
           </b>
           <p className="text-2xl">
             ROYAL KLUDGE S98, or similar 96%-100% keyboard, and a bigger version
@@ -425,7 +432,7 @@ function App() {
 
         <div className="relative flex flex-col gap-4 items-center">
           <motion.div
-            className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 md:flex flex-col items-center justify-center -rotate-20 hidden"
+            className="absolute -top-8 -left-8 p-4 rounded-md bg-orange-100 md:flex flex-col items-center justify-center -rotate-20 hidden z-10"
             initial={{ opacity: 0, scale: 2 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", duration: 0.7, delay: 0.25 }}
@@ -488,7 +495,7 @@ function App() {
                 can add them here!
               </p>
               <p className="text-2xl">
-                You’ll also be able to see other people’s keyboards.
+                You’ll also be able to see other people’s keyboards and progress to getting their mechanical keyboard.
               </p>
             </div>
           </motion.div>
