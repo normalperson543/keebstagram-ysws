@@ -562,11 +562,6 @@ function App() {
             projects are allowed.
           </p>
         </Collapsible>
-        <Collapsible title="Will there be different keyboards and accessories in the shop?">
-          <p>
-            Yep! There will be more keyboards at each tier listed on our shop.
-          </p>
-        </Collapsible>
         <Collapsible title="Can I pick the custom keycaps I get shipped for free?">
           <p>
             Due to logistical concerns for availability of keycaps (we buy an
