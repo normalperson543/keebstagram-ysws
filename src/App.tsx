@@ -53,9 +53,7 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col gap-8">
-            <p className="text-4xl">
-              make keyboard-related projects,
-            </p>
+            <p className="text-4xl">make keyboard-related projects,</p>
             <p className="text-4xl">
               get <b>exclusive hack club keycaps and deskpads,</b>
             </p>
@@ -130,6 +128,16 @@ function App() {
               transition={{ delay: 0.2 }}
             />
             <motion.img
+              src={customPadM}
+              className="absolute top-160 rounded-md shadow-gray-500 shadow-md"
+              width={180}
+              height={180}
+              initial={{ left: -0, opacity: 0, rotate: 0 }}
+              whileInView={{ left: 24, opacity: 1, rotate: -12 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ delay: 0.2 }}
+            />
+            <motion.img
               src="/assets/keycaps/hcb-dark.png"
               className="absolute top-24"
               width={96}
@@ -156,6 +164,16 @@ function App() {
               height={96}
               initial={{ right: 12, opacity: 0, rotate: 0 }}
               whileInView={{ right: 24, opacity: 1, rotate: -12 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ delay: 0.32 }}
+            />
+            <motion.img
+              src={customPadS}
+              className="absolute top-160 rounded-md shadow-gray-500 shadow-md"
+              width={120}
+              height={120}
+              initial={{ right: 12, opacity: 0, rotate: 0 }}
+              whileInView={{ right: 24, opacity: 1, rotate: 12 }}
               whileTap={{ scale: 0.8 }}
               transition={{ delay: 0.32 }}
             />
