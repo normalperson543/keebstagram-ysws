@@ -425,8 +425,9 @@ function App() {
             desk pad, and 7 total custom keys!
           </b>
           <p className="text-2xl">
-            ROYAL KLUDGE S98, or similar 96%-100% keyboard, and a bigger version
-            of the exclusive desk pad above! That means 26 hours of coding!
+            ROYAL KLUDGE S98, or similar 96%-100% keyboard, and a full-size
+            deskpad version of the exclusive mouse pad above! That means 26
+            hours of coding!
           </p>
         </div>
 
@@ -495,7 +496,8 @@ function App() {
                 can add them here!
               </p>
               <p className="text-2xl">
-                You’ll also be able to see other people’s keyboards and progress to getting their mechanical keyboard.
+                You’ll also be able to see other people’s keyboards and progress
+                to getting their mechanical keyboard.
               </p>
             </div>
           </motion.div>
