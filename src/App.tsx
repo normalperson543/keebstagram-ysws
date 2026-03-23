@@ -299,7 +299,7 @@ function App() {
       <div className="flex flex-col gap-8 md:px-24 px-12 py-18 text-center items-center justify-center">
         <div className="flex flex-col gap-4">
           <b className="text-4xl">
-            Every 15 minutes you make something, one key gets added to your
+            Every 15 minutes you make any keyboard related project, one key gets added to your
             virtual keyboard.
           </b>
           <p className="text-4xl">
