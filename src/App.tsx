@@ -359,9 +359,9 @@ function App() {
             Get a 60% mechanical keyboard IRL, AND a wrist rest, AND 3 total
             custom keys.
           </b>
-          <p className="text-2xl">
-            ROYAL KLUDGE R65 or similar 60-65% keyboard. That means 16 hours of
-            coding!
+          <p className="text-xl">
+            Details: ROYAL KLUDGE R65 or similar 60-65% keyboard, and 3 custom
+            Hack-Club themed keycaps. That means 16 hours of coding!
           </p>
         </div>
         <div className="relative">
@@ -386,12 +386,13 @@ function App() {
             Complete a 75% virtual keyboard with 84 keys,
           </b>
           <b className="text-4xl">
-            Get a 75% mechanical keyboard, AND a Hack Club-themed mouse pad, and
-            5 total custom keys.
+            Get a 75% mechanical keyboard IRL, AND a Hack Club-themed mouse pad,
+            and 5 total custom keys.
           </b>
-          <p className="text-2xl">
-            EPOMAKER X Aula F75 MAX or similar 75%-TKL keyboard and exclusive
-            Hack Club mouse pad. That means 21 hours of coding!
+          <p className="text-xl">
+            Details: EPOMAKER X Aula F75 MAX or similar 75%-TKL keyboard,
+            exclusive Hack Club mouse pad, and 5 custom Hack-Club themed
+            keycaps. That means 21 hours of coding!
           </p>
         </div>
         <div className="flex flex-row gap-6 items-center w-2/3">
@@ -421,13 +422,13 @@ function App() {
             Or, complete a 100% virtual keyboard with 104 keys,
           </b>
           <b className="text-4xl">
-            Get a 96-100% mechanical keyboard, AND a full size Hack Club-themed
-            desk pad, and 7 total custom keys!
+            Get a 96-100% mechanical keyboard IRL, AND a full size Hack
+            Club-themed desk pad, and 7 total custom keys!
           </b>
-          <p className="text-2xl">
-            ROYAL KLUDGE S98, or similar 96%-100% keyboard, and a full-size
-            deskpad version of the exclusive mouse pad above! That means 26
-            hours of coding!
+          <p className="text-xl">
+            Details: ROYAL KLUDGE S98, or similar 96%-100% keyboard, a full-size
+            deskpad version of the exclusive mouse pad above, and 7 custom
+            Hack-Club themed keycaps! That means 26 hours of coding!
           </p>
         </div>
 
