@@ -673,6 +673,9 @@ function App() {
                 Open source.
               </a>
             </p>
+            <p>
+              Need help? Check out the #keebstagram channel on Hack Club Slack for support and updates!
+            </p>
           </div>
           <img
             src={dinoTired}
